@@ -52,7 +52,7 @@ export function useHeadMetaTags() {
  *    - /src/lib/seo/config.ts의 googleAnalyticsId 업데이트
  *
  * 4. OG 이미지 생성
- *    - /public/og-image.png 추가 (1200x630px)
+ *    - /public/logo.png 추가 (1200x630px)
  *
  * 5. 로컬 테스트
  *    - Open Graph 검증: https://ogp.me/

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: 'https://t-clean.vercel.app',
     images: [
       {
-        url: 'https://t-clean.vercel.app/og-image.png',
+        url: 'https://t-clean.vercel.app/logo.png',
         width: 1200,
         height: 630,
         alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '믿고 맡기는 청소',
     description: '프리미엄 공실 청소 서비스',
-    images: ['https://t-clean.vercel.app/og-image.png'],
+    images: ['https://t-clean.vercel.app/logo.png'],
   },
   robots: {
     index: true,

@@ -52,7 +52,7 @@ const nextConfig: NextConfig = {
       },
       /* OG 이미지 캐싱 */
       {
-        source: '/og-image.png',
+        source: '/logo.png',
         headers: [
           {
             key: 'Cache-Control',

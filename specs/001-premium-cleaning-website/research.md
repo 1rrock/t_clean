@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     siteName: '믿고 맡기는 청소',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.jpg',
         width: 1200,
         height: 630,
         alt: '믿고 맡기는 청소',
