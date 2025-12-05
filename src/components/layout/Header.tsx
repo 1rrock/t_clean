@@ -30,6 +30,7 @@ const menuItems = [
   { label: '시공 사례', href: '/case-study' },
   { label: '후기', href: '/review' },
   { label: '이용 안내', href: '/notice' },
+  { label: '아카데미', href: '/academy' },
   { label: '견적 / 예약', href: '/reservation' },
 ];
 
