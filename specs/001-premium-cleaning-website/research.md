@@ -147,7 +147,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://mclean.example.com',
+    url: 'https://tclean.example.com',
     siteName: '믿고 맡기는 청소',
     images: [
       {
@@ -348,8 +348,8 @@ export function Button({
 // lib/constants.ts
 export const EXTERNAL_LINKS = {
   RESERVATION_FORM: 'https://forms.gle/XXXXX', // Google Form ID
-  YOUTUBE: 'https://youtube.com/@mclean',
-  INSTAGRAM: 'https://instagram.com/mclean',
+  YOUTUBE: 'https://youtube.com/@tclean',
+  INSTAGRAM: 'https://instagram.com/tclean',
 } as const;
 
 // lib/api/analytics.ts

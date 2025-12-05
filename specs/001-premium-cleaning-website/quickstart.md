@@ -11,7 +11,7 @@
 ### 1.1 필수 패키지 설치 (이미 설치됨)
 
 ```bash
-cd /Users/1rrock/project/mclean
+cd /Users/1rrock/project/tclean
 
 # 패키지 확인
 npm list
@@ -759,16 +759,15 @@ export const fetcherWithRetry = async (
 // lib/constants.ts
 export const EXTERNAL_LINKS = {
   RESERVATION_FORM: 'https://forms.gle/YOUR_FORM_ID',
-  YOUTUBE: 'https://youtube.com/@mclean',
-  INSTAGRAM: 'https://instagram.com/mclean',
-  LINKEDIN: 'https://linkedin.com/company/mclean',
+  YOUTUBE: 'https://youtube.com/@tclean',
+  INSTAGRAM: 'https://www.instagram.com/t_cleaning_',
 } as const;
 
 export const SITE_CONFIG = {
   name: '믿고 맡기는 청소',
   description: '프리미엄 공실 청소 서비스',
-  url: 'https://mclean.example.com',
-  ogImage: 'https://mclean.example.com/og-image.jpg',
+  url: 'https://t-clean.vercel.app/',
+  ogImage: 'https://t-clean.vercel.app/logo.png',
   socialLinks: EXTERNAL_LINKS,
 } as const;
 

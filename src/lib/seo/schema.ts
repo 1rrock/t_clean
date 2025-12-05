@@ -43,15 +43,14 @@ export interface BreadcrumbList {
 export function createOrganizationSchema(): Organization {
   return {
     name: '믿고 맡기는 청소',
-    url: 'https://mclean.kr',
+    url: 'https://t-clean.vercel.app',
     telephone: '010-8827-9937',
     address: {
       streetAddress: '시흥사무실',
       addressCountry: 'KR',
     },
     sameAs: [
-      'https://www.instagram.com/mclean',
-      'https://www.facebook.com/mclean',
+      'https://www.instagram.com/t_cleaning_',
     ],
     areaServed: ['Seoul', 'Gyeonggi'],
     serviceType: [

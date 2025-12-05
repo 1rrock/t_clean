@@ -1,7 +1,7 @@
-# robots.txt for mclean.kr
-Sitemap: https://mclean.kr/sitemap-service.xml
-Sitemap: https://mclean.kr/sitemap-pages.xml
-Sitemap: https://mclean.kr/sitemap.xml
+# robots.txt for https://t-clean.vercel.app/
+Sitemap: https://t-clean.vercel.app/sitemap-service.xml
+Sitemap: https://t-clean.vercel.app/sitemap-pages.xml
+Sitemap: https://t-clean.vercel.app/sitemap.xml
 # Sitemap
 
 Allow: /

@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     '공실정리',
   ],
   authors: [{ name: '믿고 맡기는 청소' }],
-  metadataBase: new URL('https://mclean.kr'),
+  metadataBase: new URL('https://t-clean.vercel.app'),
   alternates: {
-    canonical: 'https://mclean.kr',
+    canonical: 'https://t-clean.vercel.app',
   },
   openGraph: {
     title: '믿고 맡기는 청소 | 프리미엄 공실 청소 서비스',
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     siteName: '믿고 맡기는 청소',
-    url: 'https://mclean.kr',
+    url: 'https://t-clean.vercel.app',
     images: [
       {
-        url: 'https://mclean.kr/og-image.png',
+        url: 'https://t-clean.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '믿고 맡기는 청소',
     description: '프리미엄 공실 청소 서비스',
-    images: ['https://mclean.kr/og-image.png'],
+    images: ['https://t-clean.vercel.app/og-image.png'],
   },
   robots: {
     index: true,
@@ -79,7 +79,7 @@ export default function RootLayout({
               '@type': 'LocalBusiness',
               name: '믿고 맡기는 청소',
               description: '프리미엄 공실 청소 서비스 전문가',
-              url: 'https://mclean.kr',
+              url: 'https://t-clean.vercel.app',
               telephone: '010-8827-9937',
               address: {
                 '@type': 'PostalAddress',
@@ -87,8 +87,7 @@ export default function RootLayout({
                 addressCountry: 'KR',
               },
               sameAs: [
-                'https://www.instagram.com/mclean',
-                'https://www.facebook.com/mclean',
+                'https://www.instagram.com/t_cleaning_',
               ],
               areaServed: ['Seoul', 'Gyeonggi'],
               serviceType: [

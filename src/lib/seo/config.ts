@@ -1,7 +1,7 @@
 // SEO 및 분석 관련 설정
 
 export const SITE_CONFIG = {
-  baseUrl: 'https://mclean.kr',
+  baseUrl: 'https://t-clean.vercel.app',
   siteName: '믿고 맡기는 청소',
   description: '프리미엄 공실 청소 서비스',
   businessPhone: '010-8827-9937',
@@ -16,8 +16,7 @@ export const SITE_CONFIG = {
 
   // Social Media
   socialMedia: {
-    instagram: 'https://www.instagram.com/mclean',
-    facebook: 'https://www.facebook.com/mclean',
+    instagram: 'https://www.instagram.com/t_cleaning_',
   },
 
   // Service Areas
@@ -39,7 +38,7 @@ export const SITE_CONFIG = {
 export const OG_IMAGE_CONFIG = {
   width: 1200,
   height: 630,
-  url: 'https://mclean.kr/og-image.png',
+  url: 'https://t-clean.vercel.app/og-image.png',
   alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
 };
 

@@ -10,7 +10,7 @@
 ## 1. 권장 폴더 구조
 
 ```
-/Users/1rrock/project/mclean/
+/Users/1rrock/project/tclean/
 
 app/                          # Next.js App Router (route definitions)
 ├── layout.tsx                # 전역 레이아웃, meta, providers

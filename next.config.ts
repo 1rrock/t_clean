@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'mclean.kr',
+        hostname: 't-clean.vercel.app',
       },
     ],
   },

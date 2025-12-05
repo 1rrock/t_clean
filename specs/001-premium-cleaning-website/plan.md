@@ -76,7 +76,7 @@ specs/001-premium-cleaning-website/
 ### Source Code (repository root)
 
 ```text
-/Users/1rrock/project/mclean/ (Next.js 16 App Router)
+/Users/1rrock/project/tclean/ (Next.js 16 App Router)
 
 app/
 ├── layout.tsx               # 전역 레이아웃, 메타 설정, Provider 설정

@@ -5,10 +5,10 @@ info:
   version: 1.0.0
   contact:
     name: API Support
-    email: support@mclean.example.com
+    email: support@tclean.example.com
 
 servers:
-  - url: https://api.mclean.example.com
+  - url: https://api.tclean.example.com
     description: Production
   - url: http://localhost:3000/api
     description: Development
