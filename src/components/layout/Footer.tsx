@@ -1,7 +1,7 @@
 'use client';
 
 import {Box, Container, Divider, Typography} from '@mui/material';
-import {Instagram, Youtube, Phone, Mail, MapPin} from 'lucide-react';
+import {Instagram, Youtube, Phone, MapPin} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {colors} from "@/lib/theme/colors";
@@ -38,25 +38,13 @@ export default function Footer() {
         <Box
             component="footer"
             sx={{
-                backgroundColor: 'transparent',
+                backgroundColor: colors.background.dark,
                 color: 'white',
                 py: { xs: 6, md: 8 },
                 borderTop: `1px solid ${colors.border.default}`,
-                position: 'relative',
-                '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: colors.background.dark,
-                    pointerEvents: 'none',
-                    zIndex: 0,
-                },
             }}
         >
-            <Container maxWidth="xl" sx={{position: 'relative', zIndex: 1}}>
+            <Container maxWidth="xl">
                 {/* 상단 메뉴 섹션 */}
                 <Box
                     sx={{
@@ -68,12 +56,12 @@ export default function Footer() {
                 >
                     {/* 로고 & 소개 */}
                     <Box>
-                        <Box sx={{mb: 3}}>
+                        <Box sx={{mb: 3, position: 'relative', width: 160, height: 44}}>
                             <Image
                                 src="/logo.png"
                                 alt="믿고 맡기는 청소"
-                                width={160}
-                                height={44}
+                                fill
+                                sizes="160px"
                                 style={{objectFit: 'contain'}}
                             />
                         </Box>
@@ -129,9 +117,10 @@ export default function Footer() {
                         </Box>
                     ))}
 
+                <Divider sx={{my: 4, borderColor: colors.border.default}}/>
 
                     {/* 소셜 미디어 */}
-                    <Box className="absolute bottom-24 right-10" sx={{display: 'flex', gap: 2}}>
+                    <Box className="absolute bottom-38 right-10" sx={{display: 'flex', gap: 2}}>
                         <Link href="https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n" target="_blank" rel="noopener noreferrer">
                             <Box
                                 sx={{
@@ -194,7 +183,7 @@ export default function Footer() {
 
                     {/* 저작권 */}
                     <Typography variant="body2" sx={{textAlign: { xs: 'left', md: 'right' }, opacity: 0.8, color: colors.text.tertiary, fontSize: '0.85rem'}}>
-                        © {new Date().getFullYear()} 믿고 맡기는 청소. All rights reserved.
+                        © 2026 믿고 맡기는 청소. All rights reserved.
                     </Typography>
                 </Box>
             </Container>

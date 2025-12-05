@@ -1,9 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Providers from './providers';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageTransition from '@/components/common/PageTransition';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: '믿고 맡기는 청소 | 서울 경기 프리미엄 공실 청소 서비스',
@@ -55,10 +61,12 @@ export const metadata: Metadata = {
     'max-snippet': -1,
     'max-video-preview': -1,
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
+  formatDetection: {
+    telephone: false,
   },
 };
 
@@ -69,7 +77,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <head>
+      <body>
+        <Providers>
+          <Header />
+          <main className="pt-14 md:pt-18 min-h-dvh">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+        </Providers>
+
         {/* JSON-LD 구조화된 데이터 - Organization */}
         <script
           type="application/ld+json"
@@ -118,27 +134,6 @@ export default function RootLayout({
             }),
           }}
         />
-
-        {/* 추가 메타 태그 */}
-        <meta name="theme-color" content="#1a1a1a" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="format-detection" content="telephone=no" />
-
-        {/* Google 검색 콘솔 */}
-        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
-
-        {/* Naver 검색 콘솔 */}
-        <meta name="naver-site-verification" content="YOUR_NAVER_VERIFICATION_CODE" />
-      </head>
-      <body>
-        <Providers>
-          <Header />
-          <main className="pt-14 md:pt-18  min-h-dvh">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </Providers>
       </body>
     </html>
   );
