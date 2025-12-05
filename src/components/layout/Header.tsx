@@ -49,20 +49,6 @@ const menuGroups = [
   },
 ];
 
-// 모바일 메뉴용 전체 항목
-const allMenuItems = [
-  { label: '메인', href: '/' },
-  { label: '소개', href: '/about' },
-  { label: '서비스', href: '/service' },
-  { label: '작업 방식', href: '/how-we-work' },
-  { label: '장비 & 시스템', href: '/equipment' },
-  { label: '시공 사례', href: '/case-study' },
-  { label: '후기', href: '/review' },
-  { label: '이용 안내', href: '/notice' },
-  { label: '아카데미', href: '/academy' },
-  { label: '견적 / 예약', href: '/reservation' },
-];
-
 export default function Header() {
   const pathname = usePathname();
   const { isOpen, toggle, close } = useMenuStore();
@@ -189,7 +175,6 @@ export default function Header() {
                       position: 'absolute',
                       top: '100%',
                       left: '50%',
-                      transform: 'translateX(-50%)',
                       pt: 2,
                       opacity: activeMenu === group.label ? 1 : 0,
                       visibility: activeMenu === group.label ? 'visible' : 'hidden',
@@ -227,7 +212,7 @@ export default function Header() {
                       }}
                     >
                       <Box sx={{ py: 1.5 }}>
-                        {group.items.map((item, index) => (
+                        {group.items.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
