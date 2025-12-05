@@ -1,6 +1,6 @@
 import {Metadata} from 'next';
 
-const ogImageUrl = 'https://t-clean.vercel.app/logo.png';
+const ogImageUrl = 'https://t-clean.vercel.app/og-image.png';
 
 export const aboutMetadata: Metadata = {
     title: '소개 | 믿고 맡기는 청소 - 브랜드 철학 및 가치',
