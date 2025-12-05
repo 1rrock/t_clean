@@ -3,12 +3,11 @@
 import { Box, Container, Typography, Card, CardContent, Chip } from '@mui/material';
 import { Home, Truck, Wrench, MapPin, Ruler, AlertTriangle, CheckCircle, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
-import {colors, commonStyles} from '@/lib/theme/colors';
+import { fadeInUp } from '@/lib/animation/variants';
+import { colors } from '@/lib/theme/colors';
 import PageHero from "@/components/sections/PageHero";
 
 const MotionBox = motion(Box);
-const MotionTypography = motion(Typography);
 const MotionCard = motion(Card);
 
 // 시공 사례 데이터
@@ -137,14 +136,14 @@ export default function CaseStudyPage() {
 										},
 									}}
 									sx={{
-										backgroundColor: '#0a0a0a',
-										border: '1px solid rgba(255, 255, 255, 0.1)',
-										boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+										backgroundColor: colors.background.dark,
+										border: `1px solid ${colors.border.default}`,
+										boxShadow: colors.shadow.default,
 										overflow: 'visible',
 										transition: 'all 0.3s ease',
 										'&:hover': {
-											boxShadow: '0 8px 30px rgba(91, 124, 153, 0.3)',
-											borderColor: '#5B7C99',
+											boxShadow: colors.shadow.hover,
+											borderColor: colors.primary.main,
 										},
 									}}
 								>
@@ -164,22 +163,22 @@ export default function CaseStudyPage() {
 													width: 70,
 													height: 70,
 													borderRadius: '50%',
-													backgroundColor: '#5B7C99',
+													backgroundColor: colors.primary.main,
 													display: 'flex',
 													alignItems: 'center',
 													justifyContent: 'center',
 													mr: 2,
-													boxShadow: '0 4px 15px rgba(61, 125, 216, 0.4)',
+													boxShadow: colors.shadow.blue,
 												}}
 											>
-												<IconComponent size={36} color="white" />
+												<IconComponent size={36} color={colors.text.primary} />
 											</Box>
 											<Box sx={{ flex: 1 }}>
 												<Typography
 													variant="h4"
 													sx={{
 														fontWeight: 600,
-														color: '#5B7C99',
+														color: colors.primary.main,
 														mb: 1,
 													}}
 												>
@@ -196,9 +195,9 @@ export default function CaseStudyPage() {
 														icon={<Ruler size={16} />}
 														label={study.평수}
 														sx={{
-															backgroundColor: 'rgba(61, 125, 216, 0.2)',
-															color: '#5B7C99',
-															border: '1px solid #5B7C99',
+															backgroundColor: `${colors.primary.main}20`,
+															color: colors.primary.main,
+															border: `1px solid ${colors.primary.main}`,
 														}}
 														variant="outlined"
 													/>
@@ -206,9 +205,9 @@ export default function CaseStudyPage() {
 														icon={<MapPin size={16} />}
 														label={study.location}
 														sx={{
-															backgroundColor: 'rgba(61, 125, 216, 0.2)',
-															color: '#5B7C99',
-															border: '1px solid #5B7C99',
+															backgroundColor: `${colors.primary.main}20`,
+															color: colors.primary.main,
+															border: `1px solid ${colors.primary.main}`,
 														}}
 														variant="outlined"
 													/>
@@ -227,14 +226,14 @@ export default function CaseStudyPage() {
 											>
 												<AlertTriangle
 													size={24}
-													color="#f44336"
+													color={colors.status.error}
 													style={{ marginRight: '8px' }}
 												/>
 												<Typography
 													variant="h6"
 													sx={{
 														fontWeight: 600,
-														color: '#ffffff',
+														color: colors.text.primary,
 													}}
 												>
 													현장 문제점 진단
@@ -254,7 +253,7 @@ export default function CaseStudyPage() {
 														variant="body2"
 														sx={{
 															lineHeight: 1.6,
-															color: '#b0b0b0',
+															color: colors.text.tertiary,
 														}}
 													>
 														• {problem}
@@ -274,14 +273,14 @@ export default function CaseStudyPage() {
 											>
 												<Wrench
 													size={24}
-													color="#5B7C99"
+													color={colors.primary.main}
 													style={{ marginRight: '8px' }}
 												/>
 												<Typography
 													variant="h6"
 													sx={{
 														fontWeight: 600,
-														color: '#ffffff',
+														color: colors.text.primary,
 													}}
 												>
 													사용 장비
@@ -300,8 +299,8 @@ export default function CaseStudyPage() {
 														key={idx}
 														label={eq}
 														sx={{
-															backgroundColor: '#5B7C99',
-															color: 'white',
+															backgroundColor: colors.primary.main,
+															color: colors.text.primary,
 														}}
 													/>
 												))}
@@ -319,14 +318,14 @@ export default function CaseStudyPage() {
 											>
 												<CheckCircle
 													size={24}
-													color="#4caf50"
+													color={colors.status.success}
 													style={{ marginRight: '8px' }}
 												/>
 												<Typography
 													variant="h6"
 													sx={{
 														fontWeight: 600,
-														color: '#ffffff',
+														color: colors.text.primary,
 													}}
 												>
 													실제 작업 방식
@@ -348,8 +347,8 @@ export default function CaseStudyPage() {
 														key={idx}
 														sx={{
 															p: 2,
-															backgroundColor: 'rgba(76, 175, 80, 0.15)',
-															border: '1px solid rgba(76, 175, 80, 0.3)',
+															backgroundColor: `${colors.status.success}15`,
+															border: `1px solid ${colors.status.success}50`,
 															borderRadius: 1,
 															display: 'flex',
 															alignItems: 'center',
@@ -361,8 +360,8 @@ export default function CaseStudyPage() {
 																width: 24,
 																height: 24,
 																borderRadius: '50%',
-																backgroundColor: '#4caf50',
-																color: 'white',
+																backgroundColor: colors.status.success,
+																color: colors.text.primary,
 																display: 'flex',
 																alignItems: 'center',
 																justifyContent: 'center',
@@ -377,7 +376,7 @@ export default function CaseStudyPage() {
 															variant="body2"
 															sx={{
 																lineHeight: 1.4,
-																color: '#ffffff',
+																color: colors.text.primary,
 															}}
 														>
 															{step}
@@ -391,8 +390,8 @@ export default function CaseStudyPage() {
 										<Box
 											sx={{
 												p: 3,
-												backgroundColor: 'rgba(61, 125, 216, 0.15)',
-												border: '1px solid rgba(61, 125, 216, 0.3)',
+												backgroundColor: `${colors.primary.main}15`,
+												border: `1px solid ${colors.primary.main}50`,
 												borderRadius: 1,
 												mb: 3,
 											}}
@@ -402,7 +401,7 @@ export default function CaseStudyPage() {
 												sx={{
 													fontWeight: 600,
 													mb: 1,
-													color: '#5B7C99',
+													color: colors.primary.main,
 												}}
 											>
 												작업 결과
@@ -411,7 +410,7 @@ export default function CaseStudyPage() {
 												variant="body1"
 												sx={{
 													lineHeight: 1.8,
-													color: '#ffffff',
+													color: colors.text.primary,
 												}}
 											>
 												{study.result}
@@ -422,10 +421,10 @@ export default function CaseStudyPage() {
 										<Box
 											sx={{
 												p: 3,
-												backgroundColor: 'rgba(255, 255, 255, 0.05)',
+												backgroundColor: colors.background.overlayVeryLight,
 												borderRadius: 1,
 												borderLeft: '4px solid',
-												borderColor: '#5B7C99',
+												borderColor: colors.primary.main,
 											}}
 										>
 											<Box
@@ -437,14 +436,14 @@ export default function CaseStudyPage() {
 											>
 												<MessageSquare
 													size={20}
-													color="#5B7C99"
+													color={colors.primary.main}
 													style={{ marginRight: '8px' }}
 												/>
 												<Typography
 													variant="subtitle2"
 													sx={{
 														fontWeight: 600,
-														color: '#5B7C99',
+														color: colors.primary.main,
 													}}
 												>
 													고객 피드백
@@ -455,7 +454,7 @@ export default function CaseStudyPage() {
 												sx={{
 													lineHeight: 1.8,
 													fontStyle: 'italic',
-													color: '#b0b0b0',
+													color: colors.text.tertiary,
 												}}
 											>
 												&ldquo;{study.feedback}&rdquo;
@@ -470,7 +469,7 @@ export default function CaseStudyPage() {
 			</Box>
 
 			{/* Bottom CTA */}
-			<Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#0a0a0a' }}>
+			<Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: colors.background.dark }}>
 				<Container maxWidth="md">
 					<MotionBox
 						initial="hidden"
@@ -479,12 +478,12 @@ export default function CaseStudyPage() {
 						variants={fadeInUp}
 						sx={{
 							p: { xs: 4, md: 6 },
-							backgroundColor: '#1a1a1a',
-							border: '1px solid rgba(61, 125, 216, 0.3)',
-							color: 'white',
-							borderRadius: 1,
+							backgroundColor: colors.background.card,
+							border: `1px solid ${colors.border.blueStrong}`,
+							color: colors.text.primary,
+							borderRadius: 2,
 							textAlign: 'center',
-							boxShadow: '0 4px 20px rgba(61, 125, 216, 0.2)',
+							boxShadow: colors.shadow.hover,
 						}}
 					>
 						<Typography
@@ -493,7 +492,7 @@ export default function CaseStudyPage() {
 								mb: 2,
 								fontWeight: 600,
 								fontSize: { xs: '1.5rem', md: '2rem' },
-								color: '#5B7C99',
+								color: colors.primary.main,
 							}}
 						>
 							여러분의 공간도 변화시킬 준비가 되어 있습니다
@@ -502,7 +501,7 @@ export default function CaseStudyPage() {
 							variant="body1"
 							sx={{
 								lineHeight: 1.8,
-								color: '#b0b0b0',
+								color: colors.text.secondary,
 							}}
 						>
 							전문성과 정성으로 완성하는 청소

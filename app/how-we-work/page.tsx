@@ -14,8 +14,8 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PageHero from '@/components/sections/PageHero';
-import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
-import { colors, commonStyles } from '@/lib/theme/colors';
+import { fadeInUp } from '@/lib/animation/variants';
+import { colors } from '@/lib/theme/colors';
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -123,7 +123,7 @@ export default function HowWeWorkPage() {
                             mb: 8,
                             fontSize: {xs: '1.8rem', md: '2.5rem'},
                             fontWeight: 600,
-                            color: 'primary.main',
+                            color: colors.text.primary,
                         }}
                     >
                         작업 프로세스 요약
@@ -168,21 +168,21 @@ export default function HowWeWorkPage() {
                                             width: 80,
                                             height: 80,
                                             borderRadius: '50%',
-                                            backgroundColor: 'primary.main',
+                                            backgroundColor: colors.primary.main,
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             mb: 2,
-                                            boxShadow: 3,
+                                            boxShadow: colors.shadow.blue,
                                         }}
                                     >
-                                        <Icon size={36} color="white"/>
+                                        <Icon size={36} color={colors.text.primary}/>
                                     </Box>
                                     <Typography
                                         variant="body1"
                                         sx={{
                                             fontWeight: 600,
-                                            color: 'primary.dark',
+                                            color: colors.text.primary,
                                             lineHeight: 1.4,
                                         }}
                                     >
@@ -225,7 +225,7 @@ export default function HowWeWorkPage() {
                             mb: 8,
                             fontSize: {xs: '1.8rem', md: '2.5rem'},
                             fontWeight: 600,
-                            color: 'primary.main',
+                            color: colors.primary.main,
                         }}
                     >
                         청소 프로세스 상세
@@ -240,7 +240,7 @@ export default function HowWeWorkPage() {
                                 top: 0,
                                 bottom: 0,
                                 width: '2px',
-                                backgroundColor: 'primary.light',
+                                backgroundColor: colors.primary.light,
                                 display: {xs: 'block', md: 'block'},
                             }}
                         />
@@ -287,9 +287,12 @@ export default function HowWeWorkPage() {
                                             <Card
                                                 sx={{
                                                     maxWidth: {xs: '100%', md: '400px'},
-                                                    boxShadow: 3,
+                                                    backgroundColor: colors.background.card,
+                                                    border: `1px solid ${colors.border.blue}`,
+                                                    boxShadow: colors.shadow.default,
                                                     '&:hover': {
-                                                        boxShadow: 6,
+                                                        boxShadow: colors.shadow.hover,
+                                                        borderColor: colors.primary.main,
                                                     },
                                                 }}
                                             >
@@ -300,29 +303,29 @@ export default function HowWeWorkPage() {
                                                                 width: 50,
                                                                 height: 50,
                                                                 borderRadius: '50%',
-                                                                backgroundColor: 'primary.main',
+                                                                backgroundColor: colors.primary.main,
                                                                 display: 'flex',
                                                                 alignItems: 'center',
                                                                 justifyContent: 'center',
                                                                 mr: 2,
                                                             }}
                                                         >
-                                                            <Icon size={24} color="white"/>
+                                                            <Icon size={24} color={colors.text.primary}/>
                                                         </Box>
                                                         <Box>
                                                             <Typography
                                                                 variant="caption"
-                                                                sx={{color: 'primary.main', fontWeight: 600}}
+                                                                sx={{color: colors.primary.main, fontWeight: 600}}
                                                             >
                                                                 STEP {item.step}
                                                             </Typography>
-                                                            <Typography variant="h6" sx={{fontWeight: 600}}>
+                                                            <Typography variant="h6" sx={{fontWeight: 600, color: colors.text.primary}}>
                                                                 {item.title}
                                                             </Typography>
                                                         </Box>
                                                     </Box>
                                                     <Typography variant="body2"
-                                                                sx={{color: 'text.secondary', lineHeight: 1.6}}>
+                                                                sx={{color: colors.text.secondary, lineHeight: 1.6}}>
                                                         {item.description}
                                                     </Typography>
                                                 </CardContent>
@@ -337,9 +340,9 @@ export default function HowWeWorkPage() {
                                                 width: 20,
                                                 height: 20,
                                                 borderRadius: '50%',
-                                                backgroundColor: 'primary.main',
-                                                border: '3px solid white',
-                                                boxShadow: 2,
+                                                backgroundColor: colors.primary.main,
+                                                border: `3px solid ${colors.text.primary}`,
+                                                boxShadow: colors.shadow.blue,
                                                 zIndex: 1,
                                             }}
                                         />
@@ -368,7 +371,7 @@ export default function HowWeWorkPage() {
                         <Typography variant="h6" sx={{mb: 2, fontWeight: 600, color: colors.primary.main}}>
                             투명한 작업 공유
                         </Typography>
-                        <Typography variant="body1" sx={{lineHeight: 1.8, color: colors.text.dark}}>
+                        <Typography variant="body1" sx={{lineHeight: 1.8, color: colors.text.secondary}}>
                             고객 부재 시에도 촬영 결과 공유를 통해
                             <br/>
                             전 과정을 투명하게 확인하실 수 있습니다.

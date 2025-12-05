@@ -4,6 +4,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Calendar, Wrench, Camera } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
+import { colors } from '@/lib/theme/colors';
 
 const MotionBox = motion(Box);
 
@@ -54,30 +55,50 @@ export default function WorkPrinciples() {
 					viewport={{ once: true, margin: '-100px' }}
 					variants={staggerContainer}
 				>
+					{/* 메인 텍스트 - 세련된 카드 스타일 */}
 					<motion.div variants={fadeInUp}>
-						<Typography
-							variant="h3"
+						<Box
 							sx={{
+								position: 'relative',
+								maxWidth: '800px',
+								mx: 'auto',
+								mb: 8,
+								p: { xs: 4, md: 5 },
+								background: `linear-gradient(135deg, ${colors.background.overlayLight} 0%, rgba(20, 20, 20, 0.45) 100%)`,
+								borderRadius: 3,
+								border: `1px solid ${colors.border.blue}`,
+								backdropFilter: 'blur(10px)',
 								textAlign: 'center',
-								mb: 6,
-								fontSize: { xs: '1.8rem', md: '2.2rem' },
-								fontWeight: 600,
 							}}
 						>
-							믿고 맡기는 청소는 하루 한 집 전담제로 운영되며,
-							<br />
-							전문 장비와 친환경 약품 사용을 기본 원칙으로 합니다.
-							<br />
-							전 과정은 사진과 영상으로 기록해 투명하게 공유합니다.
-						</Typography>
+							<Typography
+								variant="h4"
+								sx={{
+									fontSize: { xs: '1rem', md: '1.25rem' },
+									fontWeight: 400,
+									lineHeight: 2.2,
+									color: colors.text.secondary,
+									'& span': {
+										color: colors.primary.main,
+										fontWeight: 600,
+									},
+								}}
+							>
+								믿고 맡기는 청소는 <span>하루 한 집 전담제</span>로 운영되며,
+								<br />
+								<span>전문 장비</span>와 <span>친환경 약품</span> 사용을 기본 원칙으로 합니다.
+								<br />
+								전 과정은 <span>사진과 영상</span>으로 기록해 투명하게 공유합니다.
+							</Typography>
+						</Box>
 					</motion.div>
 
+					{/* 아이콘 카드 */}
 					<Box
 						sx={{
 							display: 'grid',
 							gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-							gap: 4,
-							mt: 4,
+							gap: { xs: 3, md: 4 },
 						}}
 					>
 						{principles.map((item, index) => {
@@ -88,32 +109,53 @@ export default function WorkPrinciples() {
 									variants={fadeInUp}
 									sx={{
 										textAlign: 'center',
-										p: 3,
+										p: 4,
+										backgroundColor: 'rgba(255, 255, 255, 0.2)',
+										borderRadius: 2,
+										border: `1px solid ${colors.border.blue}`,
+                                        backdropFilter: 'blur(1px)',
+										transition: 'all 0.4s ease',
+										boxShadow: `
+											0 0 20px rgba(74, 123, 167, 0.15),
+											0 0 40px rgba(74, 123, 167, 0.05),
+											inset 0 1px 0 rgba(255, 255, 255, 0.05)
+										`,
+										'&:hover': {
+											backgroundColor: 'rgba(255, 255, 255, 0.08)',
+											borderColor: colors.primary.main,
+											transform: 'translateY(-6px)',
+											boxShadow: `
+												0 0 30px rgba(74, 123, 167, 0.4),
+												0 0 60px rgba(74, 123, 167, 0.2),
+												0 0 100px rgba(74, 123, 167, 0.1),
+												inset 0 1px 0 rgba(255, 255, 255, 0.1)
+											`,
+										},
 									}}
 								>
 									<Box
 										sx={{
-											width: 100,
-											height: 100,
+											width: 80,
+											height: 80,
 											borderRadius: '50%',
-											backgroundColor: 'rgba(91, 124, 153, 0.2)',
+											backgroundColor: `${colors.primary.main}20`,
 											display: 'flex',
 											alignItems: 'center',
 											justifyContent: 'center',
 											mx: 'auto',
 											mb: 3,
-											backdropFilter: 'blur(10px)',
-											border: '2px solid rgba(91, 124, 153, 0.4)',
-											boxShadow: '0 4px 20px rgba(91, 124, 153, 0.3)',
+											border: `2px solid ${colors.primary.main}40`,
+											boxShadow: colors.shadow.blue,
 										}}
 									>
-										<Icon size={48} color="#5B7C99" />
+										<Icon size={36} color={colors.primary.main} />
 									</Box>
 									<Typography
 										variant="h6"
 										sx={{
 											fontWeight: 600,
-											fontSize: { xs: '1.1rem', md: '1.3rem' },
+											fontSize: { xs: '1rem', md: '1.15rem' },
+											color: colors.text.primary,
 										}}
 									>
 										{item.title}

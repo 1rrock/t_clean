@@ -1,0 +1,27 @@
+# robots.txt for mclean.kr
+Sitemap: https://mclean.kr/sitemap-service.xml
+Sitemap: https://mclean.kr/sitemap-pages.xml
+Sitemap: https://mclean.kr/sitemap.xml
+# Sitemap
+
+Allow: /
+User-agent: Bingbot
+
+Allow: /
+User-agent: Yeti
+
+Allow: /
+User-agent: Googlebot
+# Specific bots
+
+Crawl-delay: 1
+# Crawl delay
+
+Disallow: /admin/
+Disallow: /.next/
+Disallow: /api/
+Allow: /
+User-agent: *
+# Allow all bots
+
+

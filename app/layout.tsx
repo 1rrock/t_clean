@@ -6,14 +6,59 @@ import Footer from '@/components/layout/Footer';
 import PageTransition from '@/components/common/PageTransition';
 
 export const metadata: Metadata = {
-  title: '믿고 맡기는 청소 | 프리미엄 공실 청소 서비스',
+  title: '믿고 맡기는 청소 | 서울 경기 프리미엄 공실 청소 서비스',
   description:
-    '고객님의 새로운 시작이 행복과 설렘으로 가득할 수 있도록, 정성과 책임을 담아 공간을 케어하는 프리미엄 공실 청소 서비스입니다.',
-  keywords: ['청소', '입주청소', '이사청소', '인테리어청소', '공실청소', '프리미엄청소'],
+    '입주청소, 이사청소, 인테리어청소 전문. 프리미엄 공실 청소로 새로운 시작을 완벽하게 준비하세요. 전문 장비와 친환경 약품으로 안전하고 깨끗한 청소를 제공합니다.',
+  keywords: [
+    '청소',
+    '입주청소',
+    '이사청소',
+    '인테리어청소',
+    '공실청소',
+    '프리미엄청소',
+    '청소서비스',
+    '서울청소',
+    '경기청소',
+    '공실정리',
+  ],
+  authors: [{ name: '믿고 맡기는 청소' }],
+  metadataBase: new URL('https://mclean.kr'),
+  alternates: {
+    canonical: 'https://mclean.kr',
+  },
   openGraph: {
+    title: '믿고 맡기는 청소 | 프리미엄 공실 청소 서비스',
+    description: '입주·이사·인테리어 후 공실 청소 전문가. 전문 장비와 친환경 약품으로 완벽한 청소를 제공합니다.',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: '믿고 맡기는 청소',
+    url: 'https://mclean.kr',
+    images: [
+      {
+        url: 'https://mclean.kr/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: '믿고 맡기는 청소',
     description: '프리미엄 공실 청소 서비스',
-    type: 'website',
+    images: ['https://mclean.kr/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
   },
 };
 
@@ -24,6 +69,69 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        {/* JSON-LD 구조화된 데이터 - Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: '믿고 맡기는 청소',
+              description: '프리미엄 공실 청소 서비스 전문가',
+              url: 'https://mclean.kr',
+              telephone: '010-8827-9937',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '시흥',
+                addressCountry: 'KR',
+              },
+              sameAs: [
+                'https://www.instagram.com/mclean',
+                'https://www.facebook.com/mclean',
+              ],
+              areaServed: ['Seoul', 'Gyeonggi'],
+              serviceType: [
+                '입주청소',
+                '이사청소',
+                '인테리어청소',
+                '공실청소',
+              ],
+            }),
+          }}
+        />
+
+        {/* JSON-LD - Service */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Service',
+              name: '프리미엄 공실 청소',
+              description: '전문 장비와 친환경 약품을 사용한 공실 청소 서비스',
+              provider: {
+                '@type': 'LocalBusiness',
+                name: '믿고 맡기는 청소',
+              },
+              areaServed: ['Seoul', 'Gyeonggi'],
+              serviceType: ['주거용', '상업용'],
+            }),
+          }}
+        />
+
+        {/* 추가 메타 태그 */}
+        <meta name="theme-color" content="#1a1a1a" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+
+        {/* Google 검색 콘솔 */}
+        <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+
+        {/* Naver 검색 콘솔 */}
+        <meta name="naver-site-verification" content="YOUR_NAVER_VERIFICATION_CODE" />
+      </head>
       <body>
         <Providers>
           <Header />

@@ -19,6 +19,7 @@ export const colors = {
     overlayLight: 'rgba(30, 30, 30, 0.1)',  // 매우 밝은 오버레이
     overlayMedium: 'rgba(15, 15, 15, 0.65)',
     overlayHeavy: 'rgba(25, 25, 25, 0.55)',
+    overlayVeryLight: 'rgba(255, 255, 255, 0.05)',  // 매우 밝은 오버레이 (카드용)
   },
 
   // 텍스트 색상
