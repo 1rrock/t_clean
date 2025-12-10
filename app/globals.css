@@ -84,25 +84,10 @@ body::before {
     right: -10px;
     bottom: -10px;
     background-image: url('/texture.png');
-    background-size: 800px 800px;
-    background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
     pointer-events: none;
-}
-
-/* 모바일에서 더 선명한 텍스처를 위한 반응형 배경 */
-@media (max-width: 768px) {
-    body::before {
-        background-image: url('/texture_small.png');
-        background-size: 600px 600px;
-    }
-}
-
-@media (max-width: 480px) {
-    body::before {
-        background-size: 500px 500px;
-    }
 }
 
 #__next,
