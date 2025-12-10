@@ -74,7 +74,7 @@ export default function WorkPrinciples() {
 							<Typography
 								variant="h4"
 								sx={{
-									fontSize: { xs: '1rem', md: '1.25rem' },
+									fontSize: { xs: '0.8rem', md: '1.25rem' },
 									fontWeight: 400,
 									lineHeight: 2.2,
 									color: colors.text.secondary,

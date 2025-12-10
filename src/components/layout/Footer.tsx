@@ -10,25 +10,25 @@ const footerMenus = [
     {
         title: '회사소개',
         links: [
-            { label: '소개', href: '/about' },
-            { label: '작업 방식', href: '/how-we-work' },
-            { label: '장비 & 시스템', href: '/equipment' },
+            {label: '소개', href: '/about'},
+            {label: '작업 방식', href: '/how-we-work'},
+            {label: '장비 & 시스템', href: '/equipment'},
         ],
     },
     {
         title: '서비스',
         links: [
-            { label: '서비스', href: '/service' },
-            { label: '시공 사례', href: '/case-study' },
-            { label: '후기', href: '/review' },
+            {label: '서비스', href: '/service'},
+            {label: '시공 사례', href: '/case-study'},
+            {label: '후기', href: '/review'},
         ],
     },
     {
         title: '고객지원',
         links: [
-            { label: '이용 안내', href: '/notice' },
-            { label: '아카데미', href: '/academy' },
-            { label: '견적 / 예약', href: '/reservation' },
+            {label: '이용 안내', href: '/notice'},
+            {label: '아카데미', href: '/academy'},
+            {label: '견적 / 예약', href: '/reservation'},
         ],
     },
 ];
@@ -40,7 +40,7 @@ export default function Footer() {
             sx={{
                 backgroundColor: colors.background.dark,
                 color: 'white',
-                py: { xs: 6, md: 8 },
+                py: {xs: 6, md: 8},
                 borderTop: `1px solid ${colors.border.default}`,
             }}
         >
@@ -49,41 +49,99 @@ export default function Footer() {
                 <Box
                     sx={{
                         display: 'grid',
-                        gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' },
-                        gap: { xs: 3, md: 4 },
+                        gridTemplateColumns: {xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)'},
+                        gap: {xs: 3, md: 4},
                         mb: 5,
                     }}
                 >
                     {/* 로고 & 소개 */}
                     <Box>
-                        <Box sx={{mb: 3, position: 'relative', width: 160, height: 44}}>
+                        <Box sx={{mb: 3, position: 'relative', width: 64, height: 44}}>
                             <Image
-                                src="/logo.png"
+                                src="/logo.svg"
                                 alt="믿고 맡기는 청소"
                                 fill
-                                sizes="160px"
+                                sizes="64px"
                                 style={{objectFit: 'contain'}}
                             />
                         </Box>
-                        <Typography variant="body2" sx={{mb: 3, opacity: 0.85, lineHeight: 1.6, fontSize: '0.85rem', color: colors.text.secondary}}>
+                        <Typography variant="body2" sx={{
+                            mb: 3,
+                            opacity: 0.85,
+                            lineHeight: 1.6,
+                            fontSize: '0.85rem',
+                            color: colors.text.secondary
+                        }}>
                             고객님의 새로운 시작이 행복과 설렘으로 가득할 수 있도록,
                             <br/>
                             정성과 책임을 담아 공간을 케어하는 프리미엄 공실 청소 서비스입니다.
                         </Typography>
 
                         {/* 연락처 정보 */}
-                        <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
-                            <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                <Phone size={16} color={colors.primary.main} style={{flexShrink: 0}} />
-                                <Typography variant="body2" sx={{color: colors.text.tertiary}}>
-                                    010-8827-9937
-                                </Typography>
+                        <Box sx={{display: 'flex', gap: 1.5}}>
+                            <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5, flexGrow: 1}}>
+                                <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
+                                    <Phone size={16} color={colors.primary.main} style={{flexShrink: 0}}/>
+                                    <Typography variant="body2" sx={{color: colors.text.tertiary}}>
+                                        010-8827-9937
+                                    </Typography>
+                                </Box>
+                                <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
+                                    <MapPin size={16} color={colors.primary.main} style={{flexShrink: 0}}/>
+                                    <Typography variant="body2" sx={{color: colors.text.tertiary}}>
+                                        시흥사무실
+                                    </Typography>
+                                </Box>
                             </Box>
-                            <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                <MapPin size={16} color={colors.primary.main} style={{flexShrink: 0}} />
-                                <Typography variant="body2" sx={{color: colors.text.tertiary}}>
-                                    시흥사무실
-                                </Typography>
+
+                            {/* 소셜 미디어 */}
+                            <Box sx={{display: 'flex', alignItems: 'end', gap: 2}}>
+                                <Link
+                                    href="https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            width: 40,
+                                            height: 40,
+                                            borderRadius: '50%',
+                                            backgroundColor: `${colors.primary.main}20`,
+                                            color: colors.primary.main,
+                                            transition: 'all 0.3s ease',
+                                            '&:hover': {
+                                                backgroundColor: colors.primary.main,
+                                                color: colors.text.primary,
+                                                transform: 'translateY(-3px)',
+                                            },
+                                        }}
+                                    >
+                                        <Youtube size={20}/>
+                                    </Box>
+                                </Link>
+                                <Link href="https://www.instagram.com/t_cleaning_/" target="_blank" rel="noopener noreferrer">
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            width: 40,
+                                            height: 40,
+                                            borderRadius: '50%',
+                                            backgroundColor: `${colors.primary.main}20`,
+                                            color: colors.primary.main,
+                                            transition: 'all 0.3s ease',
+                                            '&:hover': {
+                                                backgroundColor: colors.primary.main,
+                                                color: colors.text.primary,
+                                                transform: 'translateY(-3px)',
+                                            },
+                                        }}
+                                    >
+                                        <Instagram size={20}/>
+                                    </Box>
+                                </Link>
                             </Box>
                         </Box>
                     </Box>
@@ -91,7 +149,8 @@ export default function Footer() {
                     {/* 메뉴 컬럼들 */}
                     {footerMenus.map((menu, idx) => (
                         <Box key={idx}>
-                            <Typography variant="h6" sx={{mb: 2.5, fontWeight: 600, fontSize: '1rem', color: colors.text.primary}}>
+                            <Typography variant="h6"
+                                        sx={{mb: 2.5, fontWeight: 600, fontSize: '1rem', color: colors.text.primary}}>
                                 {menu.title}
                             </Typography>
                             <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
@@ -116,56 +175,6 @@ export default function Footer() {
                             </Box>
                         </Box>
                     ))}
-
-                <Divider sx={{my: 4, borderColor: colors.border.default}}/>
-
-                    {/* 소셜 미디어 */}
-                    <Box className="absolute bottom-38 right-10" sx={{display: 'flex', gap: 2}}>
-                        <Link href="https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n" target="_blank" rel="noopener noreferrer">
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: '50%',
-                                    backgroundColor: `${colors.primary.main}20`,
-                                    color: colors.primary.main,
-                                    transition: 'all 0.3s ease',
-                                    '&:hover': {
-                                        backgroundColor: colors.primary.main,
-                                        color: colors.text.primary,
-                                        transform: 'translateY(-3px)',
-                                    },
-                                }}
-                            >
-                                <Youtube size={20}/>
-                            </Box>
-                        </Link>
-                        <Link href="https://www.instagram.com/t_cleaning_/" target="_blank" rel="noopener noreferrer">
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: '50%',
-                                    backgroundColor: `${colors.primary.main}20`,
-                                    color: colors.primary.main,
-                                    transition: 'all 0.3s ease',
-                                    '&:hover': {
-                                        backgroundColor: colors.primary.main,
-                                        color: colors.text.primary,
-                                        transform: 'translateY(-3px)',
-                                    },
-                                }}
-                            >
-                                <Instagram size={20}/>
-                            </Box>
-                        </Link>
-                    </Box>
                 </Box>
 
                 <Divider sx={{my: 4, borderColor: colors.border.default}}/>
@@ -176,13 +185,18 @@ export default function Footer() {
                         display: 'flex',
                         justifyContent: 'end',
                         alignItems: 'center',
-                        flexWrap: { xs: 'wrap', md: 'nowrap' },
+                        flexWrap: {xs: 'wrap', md: 'nowrap'},
                         gap: 2,
                     }}
                 >
 
                     {/* 저작권 */}
-                    <Typography variant="body2" sx={{textAlign: { xs: 'left', md: 'right' }, opacity: 0.8, color: colors.text.tertiary, fontSize: '0.85rem'}}>
+                    <Typography variant="body2" sx={{
+                        textAlign: {xs: 'left', md: 'right'},
+                        opacity: 0.8,
+                        color: colors.text.tertiary,
+                        fontSize: '0.85rem'
+                    }}>
                         © 2026 믿고 맡기는 청소. All rights reserved.
                     </Typography>
                 </Box>
