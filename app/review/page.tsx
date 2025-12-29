@@ -1,11 +1,11 @@
 'use client';
 
-import {Box, Container, Typography, Card, CardContent, Rating} from '@mui/material';
-import {Quote, Star} from 'lucide-react';
-import {motion} from 'framer-motion';
+import { Box, Container, Typography, Card, CardContent, Rating } from '@mui/material';
+import { Quote, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 import PageHero from '@/components/sections/PageHero';
-import {fadeInUp, staggerContainer} from '@/lib/animation/variants';
-import {colors, commonStyles} from '@/lib/theme/colors';
+import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
+import { colors, commonStyles } from '@/lib/theme/colors';
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -23,58 +23,51 @@ const highlights = [
 // 실제 후기 데이터 (예시)
 const reviews = [
     {
-        name: '김○○',
-        type: '입주청소',
-        평수: '32평',
+        name: 'g○○',
         rating: 5,
-        date: '2024.11.15',
-        content:
-            '신축 아파트 입주 전 청소를 맡겼는데, 정말 꼼꼼하게 해주셨어요. 특히 창틀이랑 몰딩 부분이 완전히 달라졌습니다. 작업 과정도 사진으로 다 보내주셔서 믿음이 갔어요. 강력 추천합니다!',
+        content: '아제 김호현팀장님 입주청소 퍼팩트하게 잘~~완 받았어요.기다란 반즈 일텍던 청소였습니다.덕분에 새집에서 새출발이 너무 기대되네요.김사합니다~😍',
     },
     {
-        name: '이○○',
-        type: '인테리어 후 청소',
-        평수: '24평',
+        name: 'h○○',
         rating: 5,
-        date: '2024.11.08',
         content:
-            '인테리어 후 석고가루와 실리콘 자국이 너무 많았는데, 전문 장비로 깔끔하게 제거해주셨습니다. 하루 한 집만 한다는 게 확실히 느껴지는 퀄리티였어요. 가격 대비 정말 만족스러웠습니다.',
+            '어제의 김동이 제 기시기도 전에 영상을 또 올려주시다니😭 멀리까지 와주신 것도 너무 감사햇데 일이 더들어지시 않을 정도로재조하여 너무 최송하고 감사했어요😭 오늘가! 인 물론 아이의 물품과 짐이 시하자면 세정했는데 너무 집안 선택이었네요👏👏👏 설명하시면서도 계속 손으로 물치시고 저네 가시에서 분리수가까지👍 하나하나 김동 아낌 게 없었고 인성까지 홀륭하신 ❤️ 아직 입주청소 결정 못하신분도 여기니다!! 입주청소만 4번째인데 제가 보증할게요🔥 보실분들 정말 더으로 마스크 속에 숨겨진 훈남 보실수있어요🤭😍😍',
     },
     {
-        name: '박○○',
-        type: '이사청소',
-        평수: '28평',
+        name: 'a○○',
         rating: 5,
-        date: '2024.10.25',
         content:
-            '전 세입자가 나간 후 상태가 좋지 않아 걱정했는데, 완전히 새집처럼 만들어주셨어요. 특히 주방 후드와 욕실 타일이 정말 깨끗해졌습니다. 작업 시간도 충분히 가져가셔서 믿음직스러웠어요.',
+            '정말 고생많으셨어요👍 올려주신 영상보니 더 더 감동ㅜㅜ 다른 집의 포인트케어 잃을 오늘도 가구 틈이고 내일 이사해요~ㅎㅎ',
     },
     {
-        name: '정○○',
-        type: '입주청소',
-        평수: '40평',
+        name: 'p○○',
         rating: 5,
-        date: '2024.10.18',
         content:
-            '넓은 평수라 걱정했는데, 두 분이 오셔서 하루 종일 정성껏 작업해주셨습니다. 바닥 폴리싱까지 해주셔서 반짝반짝해요. 친환경 약품 사용하신다고 하셔서 아이 키우는 집으로 안심됐습니다.',
+            '저도 5월에 입주청소했는데 정말 너무 반짝했습니다. 덕분에 기분만텐 안하고 잘 지내고 있어요~ 언제나 응원합니다!! 화이팅!! 👏 👏',
     },
     {
-        name: '최○○',
-        type: '인테리어 후 청소',
-        평수: '18평',
+        name: 'y○○',
         rating: 5,
-        date: '2024.10.10',
         content:
-            '작은 평수지만 꼼꼼하게 작업해주셨어요. 다른 곳은 큰 평수 아니면 받지 않는다고 해서 난감했는데, 여기는 흔쾌히 받아주시고 퀄리티도 최고였습니다. 감사합니다!',
+            '대박님 정말 한집을 새집으로 선물해주셔야 ㅎㅎ드시간까 본 끝까지 너무 깨끗하게해주셔서 너무너무 감사해요 올 친정쟁기서 많은이들이 이 행복을 반아하길바래요 늘감찰하고 번창하세요 🤗 🙏',
     },
     {
-        name: '강○○',
-        type: '입주청소',
-        평수: '35평',
+        name: 'm○○',
         rating: 5,
-        date: '2024.09.28',
         content:
-            '준공청소가 제대로 안 돼서 먼지가 정말 많았는데, 전문 흡입기로 깔끔하게 정리해주셨어요. 작업 영상도 보내주셔서 부재중에도 안심하고 맡길 수 있었습니다. 다음에도 꼭 부탁드리고 싶어요.',
+            '우리집이에요💓 진짜 너무너무 만족합니다. 깨끗하고 행복한 새집살이에 도움주셔서 감사합니다. 글구....대박님 완전 온남 👏👏👏',
+    },
+    {
+        name: 'm○○',
+        rating: 5,
+        content:
+            '안녕하세요 이 집 입주청소 의뢰했던 본인입니다. 우연히 스피드에서 든 영상보고 신청하게 되었는데.. 대만보게 말기전 너무 잘한거같아요ㅎㅎ 이 날 습도도 높아서 엄청 더웠을텐데.. 이집부터 와주셔서 기의 말이 없으셨다하고 당황스러워...😭 기의 12시간 청소를신기같던데 최소스럽기까지 하다다구요 ㅠㅠ 남편이 밖에 잠시 물품출퇴 모두 밖에 한건 것으셨다고... 이번거는 생성이성불게 느에 원합니다 덕분에 이기정 너무 깨끗한집에서 살 이사에서 지내고 있어요!!! 주변에도 널리 홍보하고 다닐거얌 너~무 감사합니다💝💝 다더더 번창하세요 대박님!!!ㅎㅎㅎ',
+    },
+    {
+        name: 's○○',
+        rating: 5,
+        content:
+            '박진영 팀장님 덕분에 너무 깨끗한집으로 입주할 수 있게 되었습니다!! 다시 한번 감사드리고, 주위에 꼭 추천할게요. ❤️ ❤️',
     },
 ];
 
@@ -87,7 +80,7 @@ export default function ReviewPage() {
                 subtitle={
                     <>
                         고객님들의 소중한 후기가
-                        <br/>
+                        <br />
                         저희의 가장 큰 자산입니다
                     </>
                 }
@@ -97,7 +90,7 @@ export default function ReviewPage() {
             {/* Highlights Section - 밝게 */}
             <Box
                 sx={{
-                    py: {xs: 8, md: 12},
+                    py: { xs: 8, md: 12 },
                     position: 'relative',
                     '&::before': {
                         content: '""',
@@ -111,17 +104,17 @@ export default function ReviewPage() {
                     },
                 }}
             >
-                <Container maxWidth="lg" sx={{position: 'relative', zIndex: 1}}>
+                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="h3"
                         sx={{
                             textAlign: 'center',
                             mb: 6,
-                            fontSize: {xs: '1.8rem', md: '2.5rem'},
+                            fontSize: { xs: '1.8rem', md: '2.5rem' },
                             fontWeight: 600,
                             color: colors.primary.main,
                         }}
@@ -132,7 +125,7 @@ export default function ReviewPage() {
                     <Box
                         sx={{
                             display: 'grid',
-                            gridTemplateColumns: {xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)'},
+                            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
                             gap: 3,
                         }}
                     >
@@ -141,13 +134,13 @@ export default function ReviewPage() {
                                 key={index}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{once: true}}
+                                viewport={{ once: true }}
                                 variants={{
-                                    hidden: {opacity: 0, scale: 0.9},
+                                    hidden: { opacity: 0, scale: 0.9 },
                                     visible: {
                                         opacity: 1,
                                         scale: 1,
-                                        transition: {delay: index * 0.1, duration: 0.5},
+                                        transition: { delay: index * 0.1, duration: 0.5 },
                                     },
                                 }}
                                 sx={{
@@ -166,9 +159,9 @@ export default function ReviewPage() {
                                         flexShrink: 0,
                                     }}
                                 >
-                                    <Star size={20} color="white" fill="white"/>
+                                    <Star size={20} color="white" fill="white" />
                                 </Box>
-                                <Typography variant="body1" sx={{fontWeight: 500, lineHeight: 1.4, color: colors.text.secondary}}>
+                                <Typography variant="body1" sx={{ fontWeight: 500, lineHeight: 1.4, color: colors.text.secondary }}>
                                     {highlight}
                                 </Typography>
                             </MotionBox>
@@ -180,7 +173,7 @@ export default function ReviewPage() {
             {/* Reviews Section - 중간 톤 */}
             <Box
                 sx={{
-                    py: {xs: 8, md: 12},
+                    py: { xs: 8, md: 12 },
                     position: 'relative',
                     '&::before': {
                         content: '""',
@@ -194,17 +187,17 @@ export default function ReviewPage() {
                     },
                 }}
             >
-                <Container maxWidth="lg" sx={{position: 'relative', zIndex: 1}}>
+                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="h3"
                         sx={{
                             textAlign: 'center',
                             mb: 6,
-                            fontSize: {xs: '1.8rem', md: '2.5rem'},
+                            fontSize: { xs: '1.8rem', md: '2.5rem' },
                             fontWeight: 600,
                             color: colors.primary.main,
                         }}
@@ -212,26 +205,26 @@ export default function ReviewPage() {
                         실제 고객 후기
                     </MotionTypography>
 
-                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 4}}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                         {reviews.map((review, index) => (
                             <MotionCard
                                 key={index}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{once: true}}
+                                viewport={{ once: true }}
                                 variants={{
-                                    hidden: {opacity: 0, y: 30},
+                                    hidden: { opacity: 0, y: 30 },
                                     visible: {
                                         opacity: 1,
                                         y: 0,
-                                        transition: {delay: index * 0.1, duration: 0.6},
+                                        transition: { delay: index * 0.1, duration: 0.6 },
                                     },
                                 }}
                                 sx={{
                                     ...commonStyles.card,
                                 }}
                             >
-                                <CardContent sx={{p: {xs: 3, md: 4}}}>
+                                <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                                     <Box sx={{
                                         display: 'flex',
                                         justifyContent: 'space-between',
@@ -240,45 +233,16 @@ export default function ReviewPage() {
                                         gap: 2
                                     }}>
                                         <Box>
-                                            <Box sx={{display: 'flex', alignItems: 'center', gap: 2, mb: 1}}>
-                                                <Typography variant="h6" sx={{fontWeight: 600, color: colors.text.primary}}>
+                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
+                                                <Typography variant="h6" sx={{ fontWeight: 600, color: colors.text.primary }}>
                                                     {review.name}
                                                 </Typography>
-                                                <Typography
-                                                    variant="caption"
-                                                    sx={{
-                                                        px: 1.5,
-                                                        py: 0.5,
-                                                        backgroundColor: colors.primary.main,
-                                                        color: colors.text.primary,
-                                                        borderRadius: 1,
-                                                        fontWeight: 500,
-                                                    }}
-                                                >
-                                                    {review.type}
-                                                </Typography>
-                                                <Typography variant="body2" sx={{color: colors.text.tertiary}}>
-                                                    {review.평수}
-                                                </Typography>
                                             </Box>
-                                            <Rating value={review.rating} readOnly size="small"/>
+                                            <Rating value={review.rating} readOnly size="small" />
                                         </Box>
-                                        <Typography variant="caption" sx={{color: colors.text.tertiary}}>
-                                            {review.date}
-                                        </Typography>
                                     </Box>
 
-                                    <Box sx={{position: 'relative', pl: 3}}>
-                                        <Quote
-                                            size={24}
-                                            style={{
-                                                position: 'absolute',
-                                                left: 0,
-                                                top: 0,
-                                                color: colors.primary.main,
-                                                opacity: 0.2,
-                                            }}
-                                        />
+                                    <Box sx={{ position: 'relative', pl: 0 }}>
                                         <Typography
                                             variant="body1"
                                             sx={{
@@ -299,7 +263,7 @@ export default function ReviewPage() {
                     <MotionBox
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         sx={{
                             mt: 8,
@@ -311,10 +275,10 @@ export default function ReviewPage() {
                             textAlign: 'center',
                         }}
                     >
-                        <Typography variant="h5" sx={{mb: 2, fontWeight: 600, color: colors.primary.main}}>
+                        <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: colors.primary.main }}>
                             당신의 공간도 새롭게 시작하세요
                         </Typography>
-                        <Typography variant="body1" sx={{color: colors.text.secondary}}>
+                        <Typography variant="body1" sx={{ color: colors.text.secondary }}>
                             믿고 맡기는 청소와 함께라면 안심입니다
                         </Typography>
                     </MotionBox>
