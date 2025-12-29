@@ -80,7 +80,7 @@ export default function Footer() {
                         {/* 연락처 정보 */}
                         <Box sx={{ display: 'flex', gap: 1.5 }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, flexGrow: 1 }}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                                <Box component="a" target='_blank' rel='noopener noreferrer' href="https://map.naver.com/v5/search/경기%20시흥시%20시흥대로%20500" sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                                     <MapPin size={16} color={colors.primary.main} style={{ flexShrink: 0 }} />
                                     <Typography variant="body2" sx={{ color: colors.text.tertiary }}>
                                         경기 시흥시 시흥대로 500 시티프론트 큐브앤칼리오 501~3호
