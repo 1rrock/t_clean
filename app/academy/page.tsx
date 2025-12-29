@@ -244,8 +244,6 @@ export default function AcademyPage() {
                 모집 안내 보기
               </Button>
               <Button
-                component={Link}
-                href="#contact"
                 variant="outlined"
                 size="large"
                 sx={{
@@ -259,6 +257,9 @@ export default function AcademyPage() {
                     backgroundColor: `${colors.primary.main}15`,
                     borderColor: colors.primary.light,
                   },
+                }}
+                onClick={() => {
+                  window.open('https://forms.gle/eEZg55bKsdxjAhBw9', '_blank')
                 }}
               >
                 지원서 작성
@@ -1155,6 +1156,9 @@ export default function AcademyPage() {
                   backgroundColor: colors.primary.dark,
                   boxShadow: colors.shadow.blueHover,
                 },
+              }}
+              onClick={() => {
+                window.open('https://forms.gle/eEZg55bKsdxjAhBw9', '_blank')
               }}
             >
               지원서 작성하기

@@ -1,11 +1,11 @@
 'use client';
 
-import {Box, Container, Typography, Stack} from '@mui/material';
-import {motion} from 'framer-motion';
-import {Youtube, Instagram} from 'lucide-react';
+import { Box, Container, Typography, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Youtube, Instagram } from 'lucide-react';
 import Button from '@/components/common/Button';
-import {fadeInUp, staggerContainer} from '@/lib/animation/variants';
-import {commonStyles, colors} from "@/lib/theme/colors";
+import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
+import { commonStyles, colors } from "@/lib/theme/colors";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -21,8 +21,8 @@ export default function Hero() {
                     xs: 'calc(100dvh - 56px)',
                     md: 'calc(100dvh - 72px)',
                 },
-                py: {xs: 8, md: 12},
-                px: {xs: 2, md: 0},
+                py: { xs: 8, md: 12 },
+                px: { xs: 2, md: 0 },
                 display: 'flex',
                 alignItems: 'center',
                 color: 'white',
@@ -61,13 +61,13 @@ export default function Hero() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    sx={{position: 'relative', zIndex: 1}}
+                    sx={{ position: 'relative', zIndex: 1 }}
                 >
                     <MotionTypography
                         variant="h1"
                         variants={fadeInUp}
                         sx={{
-                            fontSize: {xs: '2.5rem', md: '4rem'},
+                            fontSize: { xs: '2.5rem', md: '4rem' },
                             fontWeight: 700,
                             mb: 0,
                             color: colors.primary.main,
@@ -79,7 +79,7 @@ export default function Hero() {
                         variant="h1"
                         variants={fadeInUp}
                         sx={{
-                            fontSize: {xs: '2.5rem', md: '4rem'},
+                            fontSize: { xs: '2.5rem', md: '4rem' },
                             fontWeight: 700,
                         }}
                     >
@@ -90,7 +90,7 @@ export default function Hero() {
                         variant="h5"
                         variants={fadeInUp}
                         sx={{
-                            fontSize: {xs: '1.1rem', md: '1.4rem'},
+                            fontSize: { xs: '1.1rem', md: '1.4rem' },
                             fontWeight: 400,
                             mb: 5,
                             maxWidth: '800px',
@@ -99,26 +99,29 @@ export default function Hero() {
                         }}
                     >
                         고객님의 새로운 시작이 행복과 설렘으로 가득할 수 있도록,
-                        <br/>
+                        <br />
                         정성과 책임을 담아 공간을 케어하는 프리미엄 공실 청소 서비스입니다.
                     </MotionTypography>
 
                     <MotionStack
-                        direction={{xs: 'column', sm: 'row'}}
+                        direction={{ xs: 'column', sm: 'row' }}
                         spacing={2}
                         variants={fadeInUp}
-                        sx={{alignItems: {xs: 'stretch', sm: 'center'}}}
+                        sx={{ alignItems: { xs: 'stretch', sm: 'center' } }}
                     >
                         <Button
                             variant="contained"
                             size="large"
-                            href="#"
+                            // href="#"
                             sx={{
                                 py: 2,
                                 px: 4,
                                 fontSize: '1.1rem',
                                 fontWeight: 600,
                                 ...commonStyles.button,
+                            }}
+                            onClick={() => {
+                                window.open('https://docs.google.com/forms/d/e/1FAIpQLSdTG4qtl2a2mRKGNo8y7ib3oL2lgNrRQySFUeyNTq39skc0DQ/viewform', '_blank');
                             }}
                         >
                             간편견적문의
@@ -145,7 +148,7 @@ export default function Hero() {
                                 },
                             }}
                         >
-                            <Youtube size={20}/>
+                            <Youtube size={20} />
                             유튜브
                         </Button>
 
@@ -170,7 +173,7 @@ export default function Hero() {
                                 },
                             }}
                         >
-                            <Instagram size={20}/>
+                            <Instagram size={20} />
                             인스타그램
                         </Button>
                     </MotionStack>
