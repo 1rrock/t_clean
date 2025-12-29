@@ -5,7 +5,6 @@
 export interface Organization {
   name: string;
   url: string;
-  telephone: string;
   address: {
     streetAddress?: string;
     addressCountry: string;
@@ -44,7 +43,6 @@ export function createOrganizationSchema(): Organization {
   return {
     name: '믿고 맡기는 청소',
     url: 'https://t-clean.vercel.app',
-    telephone: '010-8827-9937',
     address: {
       streetAddress: '시흥사무실',
       addressCountry: 'KR',

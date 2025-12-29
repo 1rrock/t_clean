@@ -70,7 +70,7 @@ export default function Hero() {
                             fontSize: { xs: '2.5rem', md: '4rem' },
                             fontWeight: 700,
                             mb: 0,
-                            color: colors.primary.main,
+                            color: colors.text.dark,
                         }}
                     >
                         하루 한 집,

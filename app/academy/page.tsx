@@ -1164,13 +1164,6 @@ export default function AcademyPage() {
               지원서 작성하기
             </Button>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, mb: 4 }}>
-              <Phone size={20} color={colors.primary.main} />
-              <Typography sx={{ fontSize: '1.2rem', fontWeight: 500, color: colors.text.primary }}>
-                010-8827-9937
-              </Typography>
-            </Box>
-
             <Typography
               sx={{
                 fontSize: '1.1rem',

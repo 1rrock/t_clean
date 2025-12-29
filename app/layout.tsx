@@ -96,7 +96,6 @@ export default function RootLayout({
               name: '믿고 맡기는 청소',
               description: '프리미엄 공실 청소 서비스 전문가',
               url: 'https://t-clean.vercel.app',
-              telephone: '010-8827-9937',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '시흥',

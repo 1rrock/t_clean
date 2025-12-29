@@ -4,7 +4,6 @@ export const SITE_CONFIG = {
   baseUrl: 'https://t-clean.vercel.app',
   siteName: '믿고 맡기는 청소',
   description: '프리미엄 공실 청소 서비스',
-  businessPhone: '010-8827-9937',
   businessLocation: '시흥사무실',
 
   // 검색 엔진 설정 (적용 전 검증 코드 발급받아야 함)
