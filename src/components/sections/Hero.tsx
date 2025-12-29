@@ -114,9 +114,9 @@ export default function Hero() {
                             size="large"
                             // href="#"
                             sx={{
-                                py: 2,
-                                px: 4,
-                                fontSize: '1.1rem',
+                                py: { xs: 1.5, md: 2 },
+                                px: { xs: 3, md: 4 },
+                                fontSize: { xs: '0.95rem', md: '1.1rem' },
                                 fontWeight: 600,
                                 ...commonStyles.button,
                             }}
@@ -135,9 +135,9 @@ export default function Hero() {
                                 window.open("https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n", "_blank");
                             }}
                             sx={{
-                                py: 2,
-                                px: 4,
-                                fontSize: '1.1rem',
+                                py: { xs: 1.2, md: 2 },
+                                px: { xs: 2.5, md: 4 },
+                                fontSize: { xs: '0.95rem', md: '1.1rem' },
                                 borderColor: colors.text.primary,
                                 color: colors.text.primary,
                                 display: 'flex',
@@ -160,9 +160,9 @@ export default function Hero() {
                                 window.open("https://www.instagram.com/t_cleaning_/", "_blank");
                             }}
                             sx={{
-                                py: 2,
-                                px: 4,
-                                fontSize: '1.1rem',
+                                py: { xs: 1.2, md: 2 },
+                                px: { xs: 2.5, md: 4 },
+                                fontSize: { xs: '0.95rem', md: '1.1rem' },
                                 borderColor: 'white',
                                 color: 'white',
                                 display: 'flex',
