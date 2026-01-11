@@ -68,8 +68,8 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  verification: {
-    naver: '14b36d04685e0a63c64c883d4f08d948fd5ec49b',
+  other: {
+    'naver-site-verification': '14b36d04685e0a63c64c883d4f08d948fd5ec49b',
   },
 };
 
