@@ -766,8 +766,8 @@ export const EXTERNAL_LINKS = {
 export const SITE_CONFIG = {
   name: '믿고 맡기는 청소',
   description: '프리미엄 공실 청소 서비스',
-  url: 'https://t-clean.vercel.app/',
-  ogImage: 'https://t-clean.vercel.app/logo.png',
+  url: 'https://www.trustmygroup.co.kr/',
+  ogImage: 'https://www.trustmygroup.co.kr/logo.png',
   socialLinks: EXTERNAL_LINKS,
 } as const;
 

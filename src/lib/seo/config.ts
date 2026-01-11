@@ -1,7 +1,7 @@
 // SEO 및 분석 관련 설정
 
 export const SITE_CONFIG = {
-  baseUrl: 'https://t-clean.vercel.app',
+  baseUrl: 'https://www.trustmygroup.co.kr',
   siteName: '믿고 맡기는 청소',
   description: '프리미엄 공실 청소 서비스',
   businessLocation: '시흥사무실',
@@ -37,7 +37,7 @@ export const SITE_CONFIG = {
 export const OG_IMAGE_CONFIG = {
   width: 1200,
   height: 630,
-  url: 'https://t-clean.vercel.app/og-image.png',
+  url: 'https://www.trustmygroup.co.kr/og-image.png',
   alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
 };
 

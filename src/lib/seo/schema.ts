@@ -42,7 +42,7 @@ export interface BreadcrumbList {
 export function createOrganizationSchema(): Organization {
   return {
     name: '믿고 맡기는 청소',
-    url: 'https://t-clean.vercel.app',
+    url: 'https://www.trustmygroup.co.kr',
     address: {
       streetAddress: '시흥사무실',
       addressCountry: 'KR',

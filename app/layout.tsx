@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     '공실정리',
   ],
   authors: [{ name: '믿고 맡기는 청소' }],
-  metadataBase: new URL('https://t-clean.vercel.app'),
+  metadataBase: new URL('https://www.trustmygroup.co.kr'),
   alternates: {
-    canonical: 'https://t-clean.vercel.app',
+    canonical: 'https://www.trustmygroup.co.kr',
   },
   openGraph: {
     title: '믿고 맡기는 청소 | 프리미엄 공실 청소 서비스',
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     siteName: '믿고 맡기는 청소',
-    url: 'https://t-clean.vercel.app',
+    url: 'https://www.trustmygroup.co.kr',
     images: [
       {
-        url: 'https://t-clean.vercel.app/og-image.png',
+        url: 'https://www.trustmygroup.co.kr/og-image.png',
         width: 1200,
         height: 630,
         alt: '믿고 맡기는 청소 - 프리미엄 공실 청소 서비스',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '믿고 맡기는 청소',
     description: '프리미엄 공실 청소 서비스',
-    images: ['https://t-clean.vercel.app/og-image.png'],
+    images: ['https://www.trustmygroup.co.kr/og-image.png'],
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export default function RootLayout({
               '@type': 'LocalBusiness',
               name: '믿고 맡기는 청소',
               description: '프리미엄 공실 청소 서비스 전문가',
-              url: 'https://t-clean.vercel.app',
+              url: 'https://www.trustmygroup.co.kr',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '시흥',

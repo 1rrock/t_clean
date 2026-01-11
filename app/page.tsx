@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://t-clean.vercel.app/og-image.png',
+        url: 'https://www.trustmygroup.co.kr/og-image.png',
         width: 1200,
         height: 630,
         alt: '믿고 맡기는 청소',
