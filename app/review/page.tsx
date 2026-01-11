@@ -87,89 +87,6 @@ export default function ReviewPage() {
                 isDark={false}
             />
 
-            {/* Highlights Section - 밝게 */}
-            <Box
-                sx={{
-                    py: { xs: 8, md: 12 },
-                    position: 'relative',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: colors.background.overlayLight,
-                        pointerEvents: 'none',
-                    },
-                }}
-            >
-                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-                    <MotionTypography
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeInUp}
-                        variant="h3"
-                        sx={{
-                            textAlign: 'center',
-                            mb: 6,
-                            fontSize: { xs: '1.8rem', md: '2.5rem' },
-                            fontWeight: 600,
-                            color: colors.primary.main,
-                        }}
-                    >
-                        고객님들이 말씀하시는 믿고 맡기는 청소
-                    </MotionTypography>
-
-                    <Box
-                        sx={{
-                            display: 'grid',
-                            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-                            gap: 3,
-                        }}
-                    >
-                        {highlights.map((highlight, index) => (
-                            <MotionBox
-                                key={index}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                variants={{
-                                    hidden: { opacity: 0, scale: 0.9 },
-                                    visible: {
-                                        opacity: 1,
-                                        scale: 1,
-                                        transition: { delay: index * 0.1, duration: 0.5 },
-                                    },
-                                }}
-                                sx={{
-                                    ...commonStyles.card,
-                                    p: 3,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 2,
-                                }}
-                            >
-                                <Box
-                                    sx={{
-                                        ...commonStyles.iconCircle,
-                                        width: 40,
-                                        height: 40,
-                                        flexShrink: 0,
-                                    }}
-                                >
-                                    <Star size={20} color="white" fill="white" />
-                                </Box>
-                                <Typography variant="body1" sx={{ fontWeight: 500, lineHeight: 1.4, color: colors.text.secondary }}>
-                                    {highlight}
-                                </Typography>
-                            </MotionBox>
-                        ))}
-                    </Box>
-                </Container>
-            </Box>
-
             {/* Reviews Section - 중간 톤 */}
             <Box
                 sx={{
@@ -278,7 +195,7 @@ export default function ReviewPage() {
                         <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: colors.primary.main }}>
                             당신의 공간도 새롭게 시작하세요
                         </Typography>
-                        <Typography variant="body1" sx={{ color: colors.text.secondary }}>
+                        <Typography variant="body1" sx={{ color: colors.text.dark }}>
                             믿고 맡기는 청소와 함께라면 안심입니다
                         </Typography>
                     </MotionBox>

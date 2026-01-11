@@ -1,4 +1,4 @@
-import {Metadata} from 'next';
+import { Metadata } from 'next';
 
 const ogImageUrl = 'https://t-clean.vercel.app/og-image.png';
 
@@ -82,26 +82,6 @@ export const equipmentMetadata: Metadata = {
     },
 };
 
-export const caseStudyMetadata: Metadata = {
-    title: '시공 사례 | 믿고 맡기는 청소 - 실제 청소 사례',
-    description:
-        '믿고 맡기는 청소의 입주·이사·인테리어 청소 실제 시공 사례. before & after로 확인하는 청소 결과.',
-    keywords: ['청소사례', '시공사례', '청소결과', '비포애프터'],
-    openGraph: {
-        title: '시공 사례 | 믿고 맡기는 청소',
-        description: '실제 청소 시공 사례',
-        type: 'website',
-        images: [
-            {
-                url: ogImageUrl,
-                width: 1200,
-                height: 630,
-                alt: '믿고 맡기는 청소 - 시공 사례',
-            },
-        ],
-    },
-};
-
 export const reviewMetadata: Metadata = {
     title: '후기 | 믿고 맡기는 청소 - 고객 만족도 후기',
     description:
@@ -145,7 +125,7 @@ export const noticeMetadata: Metadata = {
 export const academyMetadata: Metadata = {
     title: '아카데미 | 믿고 맡기는 청소 - 프리미엄 청소 교육',
     description:
-        '믿고 맡기는 아카데미는 실제 고객 현장을 기준으로 한 2주 실무형 교육 과정. 프리미엄 청소의 기준을 배웁니다.',
+        '믿고 맡기는 아카데미는 현장에서의 실무 교육 과정. 프리미엄 청소의 기준을 배웁니다.',
     keywords: ['청소교육', '청소아카데미', '실무교육', '청소기술'],
     openGraph: {
         title: '아카데미 | 믿고 맡기는 청소',

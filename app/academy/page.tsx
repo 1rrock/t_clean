@@ -33,8 +33,8 @@ const aboutItems = [
   { icon: Award, text: '수료 후 파트너 및 팀장 진출 가능(선발형)' },
 ];
 
-// 1주차 커리큘럼
-const week1Curriculum = [
+// 이론 및 장비 교육 커리큘럼
+const theoryCurriculum = [
   '공간 구성 요소 분석',
   '오염 유형 이해',
   '현장 안전/장비 세팅 방법',
@@ -45,13 +45,13 @@ const week1Curriculum = [
   '친환경 약품 사용 기준·조합',
 ];
 
-// 2주차 커리큘럼
-const week2Curriculum = [
+// 현장 실습 교육 커리큘럼
+const practiceCurriculum = [
   '욕실 구조별 작업 케이스',
   '주방(후드·상판·배수부)',
   '창틀·샷시(내창) 세부 청소',
   '바닥 마감 실전 실습',
-  '실제 고객 현장 참여',
+  '현장 참여',
   '전/후 결과 분석',
   '영상 리뷰 기반 피드백',
   '최종 테스트',
@@ -72,7 +72,7 @@ const programFeatures = [
   {
     icon: Users,
     title: '현장 동행 실습 필수',
-    description: '실제 고객 현장에서 작업 참여 → 즉시 피드백.',
+    description: '현장에서 작업 참여 → 즉시 피드백.',
   },
   {
     icon: Video,
@@ -84,17 +84,11 @@ const programFeatures = [
     title: '브랜드 시스템 전수',
     description: '작업 기준, 현장 응대, 결과 전달 방식까지 일원화 교육.',
   },
-  {
-    icon: Award,
-    title: '수료 후 파트너 기회',
-    description: '우수 수료자는 믿맡청 외주·파트너 팀장으로 선발될 수 있음 (검증·평가 과정 포함)',
-  },
 ];
 
 // 수료 후 진로
 const careerPaths = [
   { icon: Briefcase, text: '프리미엄 청소 브랜드 창업' },
-  { icon: Users, text: '믿맡청 파트너' },
   { icon: Wrench, text: '전문 장비 기반 프리랜서 청소' },
   { icon: Target, text: '인테리어/입주 전문 하청 시공자' },
 ];
@@ -287,38 +281,6 @@ export default function AcademyPage() {
         }}
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <Typography
-              variant="h3"
-              sx={{
-                ...commonStyles.sectionTitle,
-                color: colors.text.primary,
-                mb: 3,
-              }}
-            >
-              프리미엄 청소는 기술입니다.
-            </Typography>
-            <Typography
-              sx={{
-                textAlign: 'center',
-                maxWidth: '700px',
-                mx: 'auto',
-                mb: 6,
-                lineHeight: 1.8,
-                fontSize: { xs: '1rem', md: '1.15rem' },
-                color: colors.text.secondary,
-              }}
-            >
-              믿맡청 아카데미는 실제 고객 현장을 기준으로 한 2주 실무형 교육 과정입니다.
-              <br />
-              단순 이론이 아닌 '현장에서 바로 통하는 기준'을 배웁니다.
-            </Typography>
-          </motion.div>
 
           <Box
             sx={{
@@ -480,7 +442,7 @@ export default function AcademyPage() {
                       variant="h5"
                       sx={{ fontWeight: 600, color: colors.primary.main }}
                     >
-                      1주차
+                      이론 및 장비 교육
                     </Typography>
                   </Box>
                   <Typography
@@ -491,10 +453,10 @@ export default function AcademyPage() {
                       color: colors.text.secondary,
                     }}
                   >
-                    입주·이사청소 기본 구조 이해
+                    현장 베이스 이론 및 기본 장비 숙달 (1~2일)
                   </Typography>
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-                    {week1Curriculum.map((item, idx) => (
+                    {theoryCurriculum.map((item, idx) => (
                       <Box key={idx} sx={{ display: 'flex', alignItems: 'center' }}>
                         <CheckCircle
                           size={18}
@@ -552,7 +514,7 @@ export default function AcademyPage() {
                       variant="h5"
                       sx={{ fontWeight: 600, color: colors.primary.main }}
                     >
-                      2주차
+                      현장 실습 교육
                     </Typography>
                   </Box>
                   <Typography
@@ -563,10 +525,10 @@ export default function AcademyPage() {
                       color: colors.text.secondary,
                     }}
                   >
-                    구역별 실무 청소
+                    실제 현장 투여 및 구역별 실무 숙달 (잔여 기간)
                   </Typography>
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-                    {week2Curriculum.map((item, idx) => (
+                    {practiceCurriculum.map((item, idx) => (
                       <Box key={idx} sx={{ display: 'flex', alignItems: 'center' }}>
                         <CheckCircle
                           size={18}
@@ -834,59 +796,6 @@ export default function AcademyPage() {
                   </Box>
                 </Box>
               </Box>
-
-              {/* 수강료 */}
-              <Box
-                sx={{
-                  p: 3,
-                  backgroundColor: `${colors.primary.main}15`,
-                  borderRadius: 1,
-                  border: `1px solid ${colors.border.blue}`,
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontWeight: 600,
-                    color: colors.primary.main,
-                    mb: 2,
-                    fontSize: '1.1rem',
-                  }}
-                >
-                  수강료
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 3 }}>
-                  <Box sx={{ flex: 1, textAlign: 'center' }}>
-                    <Typography sx={{ color: colors.text.tertiary, fontSize: '0.85rem', mb: 0.5 }}>
-                      얼리버드
-                    </Typography>
-                    <Typography
-                      sx={{ fontWeight: 700, fontSize: '1.5rem', color: colors.primary.main }}
-                    >
-                      550만원
-                    </Typography>
-                  </Box>
-                  <Box sx={{ flex: 1, textAlign: 'center' }}>
-                    <Typography sx={{ color: colors.text.tertiary, fontSize: '0.85rem', mb: 0.5 }}>
-                      정가
-                    </Typography>
-                    <Typography
-                      sx={{ fontWeight: 700, fontSize: '1.5rem', color: colors.text.primary }}
-                    >
-                      880만원
-                    </Typography>
-                  </Box>
-                </Box>
-                <Typography
-                  sx={{
-                    textAlign: 'center',
-                    mt: 2,
-                    fontSize: '0.85rem',
-                    color: colors.text.tertiary,
-                  }}
-                >
-                  (기본 장비 제공·현장 실습 포함)
-                </Typography>
-              </Box>
             </CardContent>
           </MotionCard>
         </Container>
@@ -931,7 +840,7 @@ export default function AcademyPage() {
             {careerPaths.map((path, index) => {
               const Icon = path.icon;
               return (
-                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                   <MotionBox
                     initial="hidden"
                     whileInView="visible"

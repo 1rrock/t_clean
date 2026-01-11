@@ -28,7 +28,6 @@ tclean/
 │   ├── service/                 # 서비스 페이지
 │   ├── how-we-work/            # 작업 방식 페이지
 │   ├── equipment/              # 장비 & 시스템 페이지
-│   ├── case-study/             # 시공 사례 페이지
 │   ├── review/                 # 후기 페이지
 │   ├── notice/                 # 이용 안내/필독사항 페이지
 │   ├── reservation/            # 견적/예약 페이지
@@ -93,8 +92,6 @@ npm start
 4. **작업 방식 (How We Work)** - 작업 프로세스
 
 5. **장비 & 시스템 (Equipment)** - 사용 장비 소개
-
-6. **시공 사례 (Case Study)** - 작업 사례 (준비 중)
 
 7. **후기 (Review)** - 고객 후기
 

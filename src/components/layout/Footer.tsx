@@ -6,33 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { colors } from "@/lib/theme/colors";
 
-const footerMenus = [
-    {
-        title: '회사소개',
-        links: [
-            { label: '소개', href: '/about' },
-            { label: '작업 방식', href: '/how-we-work' },
-            { label: '장비 & 시스템', href: '/equipment' },
-        ],
-    },
-    {
-        title: '서비스',
-        links: [
-            { label: '서비스', href: '/service' },
-            { label: '시공 사례', href: '/case-study' },
-            { label: '후기', href: '/review' },
-        ],
-    },
-    {
-        title: '고객지원',
-        links: [
-            { label: '이용 안내', href: '/notice' },
-            { label: '아카데미', href: '/academy' },
-            { label: '견적 / 예약', href: '/reservation' },
-        ],
-    },
-];
-
 export default function Footer() {
     return (
         <Box
@@ -65,17 +38,6 @@ export default function Footer() {
                                 style={{ objectFit: 'contain' }}
                             />
                         </Box>
-                        <Typography variant="body2" sx={{
-                            mb: 3,
-                            opacity: 0.85,
-                            lineHeight: 1.6,
-                            fontSize: '0.85rem',
-                            color: colors.text.secondary
-                        }}>
-                            고객님의 새로운 시작이 행복과 설렘으로 가득할 수 있도록,
-                            <br />
-                            정성과 책임을 담아 공간을 케어하는 프리미엄 공실 청소 서비스입니다.
-                        </Typography>
 
                         {/* 연락처 정보 */}
                         <Box sx={{ display: 'flex', gap: 1.5 }}>
@@ -83,7 +45,7 @@ export default function Footer() {
                                 <Box component="a" target='_blank' rel='noopener noreferrer' href="https://map.naver.com/v5/search/경기%20시흥시%20시흥대로%20500" sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                                     <MapPin size={16} color={colors.primary.main} style={{ flexShrink: 0 }} />
                                     <Typography variant="body2" sx={{ color: colors.text.tertiary }}>
-                                        경기 시흥시 시흥대로 500 시티프론트 큐브앤칼리오 501~3호
+                                        경기 시흥시 시흥대로 500 시티프론트 큐브앤칼리오 501,502,503호
                                     </Typography>
                                 </Box>
                             </Box>
@@ -139,36 +101,6 @@ export default function Footer() {
                             </Box>
                         </Box>
                     </Box>
-
-                    {/* 메뉴 컬럼들 */}
-                    {footerMenus.map((menu, idx) => (
-                        <Box key={idx}>
-                            <Typography variant="h6"
-                                sx={{ mb: 2.5, fontWeight: 600, fontSize: '1rem', color: colors.text.primary }}>
-                                {menu.title}
-                            </Typography>
-                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
-                                {menu.links.map((link, linkIdx) => (
-                                    <Link key={linkIdx} href={link.href} style={{ textDecoration: 'none' }}>
-                                        <Typography
-                                            variant="body2"
-                                            sx={{
-                                                color: colors.text.tertiary,
-                                                fontSize: '0.9rem',
-                                                transition: 'all 0.3s ease',
-                                                '&:hover': {
-                                                    color: colors.primary.main,
-                                                    paddingLeft: '4px',
-                                                },
-                                            }}
-                                        >
-                                            {link.label}
-                                        </Typography>
-                                    </Link>
-                                ))}
-                            </Box>
-                        </Box>
-                    ))}
                 </Box>
 
                 <Divider sx={{ my: 4, borderColor: colors.border.default }} />

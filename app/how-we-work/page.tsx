@@ -2,15 +2,15 @@
 
 import { Box, Container, Typography, Card, CardContent } from '@mui/material';
 import {
-  ClipboardCheck,
-  Calendar,
-  MapPin,
-  Wrench,
-  Sparkles,
-  Target,
-  Camera,
-  CheckCircle2,
-  MessageCircle,
+    ClipboardCheck,
+    Calendar,
+    MapPin,
+    Wrench,
+    Sparkles,
+    Target,
+    Camera,
+    CheckCircle2,
+    MessageCircle,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PageHero from '@/components/sections/PageHero';
@@ -21,11 +21,11 @@ const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 
 const summarySteps = [
-    {icon: MapPin, title: '현장 상태 확인'},
-    {icon: Wrench, title: '장비·약품 선정'},
-    {icon: Sparkles, title: '구조 구간 우선 작업'},
-    {icon: Camera, title: '과정 촬영 기록'},
-    {icon: CheckCircle2, title: '결과 확인 및 공유'},
+    { icon: MapPin, title: '현장 상태 확인' },
+    { icon: Wrench, title: '장비·약품 선정' },
+    { icon: Sparkles, title: '구조 구간 우선 작업' },
+    { icon: Camera, title: '과정 촬영 기록' },
+    { icon: CheckCircle2, title: '결과 확인 및 공유' },
 ];
 
 const detailedProcess = [
@@ -94,7 +94,7 @@ export default function HowWeWorkPage() {
                 subtitle={
                     <>
                         체계적인 프로세스와 투명한 소통으로
-                        <br/>
+                        <br />
                         신뢰할 수 있는 청소 서비스를 제공합니다.
                     </>
                 }
@@ -115,13 +115,13 @@ export default function HowWeWorkPage() {
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="h3"
                         sx={{
                             textAlign: 'center',
                             mb: 8,
-                            fontSize: {xs: '1.8rem', md: '2.5rem'},
+                            fontSize: { xs: '1.8rem', md: '2.5rem' },
                             fontWeight: 600,
                             color: colors.text.primary,
                         }}
@@ -147,13 +147,13 @@ export default function HowWeWorkPage() {
                                     key={index}
                                     initial="hidden"
                                     whileInView="visible"
-                                    viewport={{once: true}}
+                                    viewport={{ once: true }}
                                     variants={{
-                                        hidden: {opacity: 0, y: 20},
+                                        hidden: { opacity: 0, y: 20 },
                                         visible: {
                                             opacity: 1,
                                             y: 0,
-                                            transition: {delay: index * 0.1, duration: 0.5},
+                                            transition: { delay: index * 0.1, duration: 0.5 },
                                         },
                                     }}
                                     sx={{
@@ -176,7 +176,7 @@ export default function HowWeWorkPage() {
                                             boxShadow: colors.shadow.blue,
                                         }}
                                     >
-                                        <Icon size={36} color={colors.text.primary}/>
+                                        <Icon size={36} color={colors.text.primary} />
                                     </Box>
                                     <Typography
                                         variant="body1"
@@ -198,7 +198,7 @@ export default function HowWeWorkPage() {
             {/* Detailed Process */}
             <Box
                 sx={{
-                    py: {xs: 8, md: 12},
+                    py: { xs: 8, md: 12 },
                     position: 'relative',
                     '&::before': {
                         content: '""',
@@ -217,13 +217,13 @@ export default function HowWeWorkPage() {
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="h3"
                         sx={{
                             textAlign: 'center',
                             mb: 8,
-                            fontSize: {xs: '1.8rem', md: '2.5rem'},
+                            fontSize: { xs: '1.8rem', md: '2.5rem' },
                             fontWeight: 600,
                             color: colors.primary.main,
                         }}
@@ -231,22 +231,22 @@ export default function HowWeWorkPage() {
                         청소 프로세스 상세
                     </MotionTypography>
 
-                    <Box sx={{position: 'relative'}}>
+                    <Box sx={{ position: 'relative' }}>
                         {/* Timeline Line */}
                         <Box
                             sx={{
                                 position: 'absolute',
-                                left: {xs: '20px', md: '50%'},
+                                left: { xs: '20px', md: '50%' },
                                 top: 0,
                                 bottom: 0,
                                 width: '2px',
                                 backgroundColor: colors.primary.light,
-                                display: {xs: 'block', md: 'block'},
+                                display: { xs: 'block', md: 'block' },
                             }}
                         />
 
                         {/* Process Steps */}
-                        <Box sx={{display: 'flex', flexDirection: 'column', gap: 4}}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                             {detailedProcess.map((item, index) => {
                                 const Icon = item.icon;
                                 const isEven = index % 2 === 0;
@@ -256,18 +256,18 @@ export default function HowWeWorkPage() {
                                         key={index}
                                         initial="hidden"
                                         whileInView="visible"
-                                        viewport={{once: true}}
+                                        viewport={{ once: true }}
                                         variants={{
-                                            hidden: {opacity: 0, x: isEven ? -30 : 30},
+                                            hidden: { opacity: 0, x: isEven ? -30 : 30 },
                                             visible: {
                                                 opacity: 1,
                                                 x: 0,
-                                                transition: {delay: index * 0.1, duration: 0.6},
+                                                transition: { delay: index * 0.1, duration: 0.6 },
                                             },
                                         }}
                                         sx={{
                                             display: 'flex',
-                                            flexDirection: {xs: 'row', md: isEven ? 'row' : 'row-reverse'},
+                                            flexDirection: { xs: 'row', md: isEven ? 'row' : 'row-reverse' },
                                             alignItems: 'center',
                                             gap: 2,
                                         }}
@@ -281,12 +281,12 @@ export default function HowWeWorkPage() {
                                                     xs: 'flex-start',
                                                     md: isEven ? 'flex-end' : 'flex-start'
                                                 },
-                                                pl: {xs: 7, md: 0},
+                                                pl: { xs: 7, md: 0 },
                                             }}
                                         >
                                             <Card
                                                 sx={{
-                                                    maxWidth: {xs: '100%', md: '400px'},
+                                                    maxWidth: { xs: '100%', md: '400px' },
                                                     backgroundColor: colors.background.card,
                                                     border: `1px solid ${colors.border.blue}`,
                                                     boxShadow: colors.shadow.default,
@@ -296,8 +296,8 @@ export default function HowWeWorkPage() {
                                                     },
                                                 }}
                                             >
-                                                <CardContent sx={{p: 3}}>
-                                                    <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
+                                                <CardContent sx={{ p: 3 }}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                                                         <Box
                                                             sx={{
                                                                 width: 50,
@@ -310,22 +310,22 @@ export default function HowWeWorkPage() {
                                                                 mr: 2,
                                                             }}
                                                         >
-                                                            <Icon size={24} color={colors.text.primary}/>
+                                                            <Icon size={24} color={colors.text.primary} />
                                                         </Box>
                                                         <Box>
                                                             <Typography
                                                                 variant="caption"
-                                                                sx={{color: colors.primary.main, fontWeight: 600}}
+                                                                sx={{ color: colors.primary.main, fontWeight: 600 }}
                                                             >
                                                                 STEP {item.step}
                                                             </Typography>
-                                                            <Typography variant="h6" sx={{fontWeight: 600, color: colors.text.primary}}>
+                                                            <Typography variant="h6" sx={{ fontWeight: 600, color: colors.text.primary }}>
                                                                 {item.title}
                                                             </Typography>
                                                         </Box>
                                                     </Box>
                                                     <Typography variant="body2"
-                                                                sx={{color: colors.text.secondary, lineHeight: 1.6}}>
+                                                        sx={{ color: colors.text.secondary, lineHeight: 1.6 }}>
                                                         {item.description}
                                                     </Typography>
                                                 </CardContent>
@@ -336,7 +336,7 @@ export default function HowWeWorkPage() {
                                         <Box
                                             sx={{
                                                 position: 'absolute',
-                                                left: {xs: '11px', md: 'calc(50% - 9px)'},
+                                                left: { xs: '11px', md: 'calc(50% - 9px)' },
                                                 width: 20,
                                                 height: 20,
                                                 borderRadius: '50%',
@@ -356,7 +356,7 @@ export default function HowWeWorkPage() {
                     <MotionBox
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         sx={{
                             mt: 8,
@@ -368,12 +368,12 @@ export default function HowWeWorkPage() {
                             textAlign: 'center',
                         }}
                     >
-                        <Typography variant="h6" sx={{mb: 2, fontWeight: 600, color: colors.primary.main}}>
+                        <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: colors.primary.main }}>
                             투명한 작업 공유
                         </Typography>
-                        <Typography variant="body1" sx={{lineHeight: 1.8, color: colors.text.secondary}}>
+                        <Typography variant="body1" sx={{ lineHeight: 1.8, color: colors.text.dark, fontWeight: 600 }}>
                             고객 부재 시에도 촬영 결과 공유를 통해
-                            <br/>
+                            <br />
                             전 과정을 투명하게 확인하실 수 있습니다.
                         </Typography>
                     </MotionBox>

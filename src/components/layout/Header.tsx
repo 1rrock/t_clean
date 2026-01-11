@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     AppBar,
     Box,
@@ -15,44 +15,42 @@ import {
     useScrollTrigger,
     Collapse,
 } from '@mui/material';
-import {Menu as MenuIcon, X, ChevronDown, ChevronUp} from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
-import {useMenuStore} from '@/store/useMenuStore';
-import {colors} from "@/lib/theme/colors";
-import {useHideOnScroll} from '@/hooks/useHideOnScroll';
+import { usePathname } from 'next/navigation';
+import { useMenuStore } from '@/store/useMenuStore';
+import { colors } from "@/lib/theme/colors";
+import { useHideOnScroll } from '@/hooks/useHideOnScroll';
 
 // 메가 메뉴 그룹 구조
 const menuGroups = [
     {
         label: '회사소개',
         items: [
-            {label: '소개', href: '/about'},
-            {label: '작업 방식', href: '/how-we-work'},
-            {label: '장비 & 시스템', href: '/equipment'},
+            { label: '소개', href: '/about' },
+            { label: '작업 방식', href: '/how-we-work' },
+            { label: '장비 & 시스템', href: '/equipment' },
         ],
     },
     {
         label: '서비스',
         items: [
-            {label: '서비스', href: '/service'},
-            {label: '시공 사례', href: '/case-study'},
-            {label: '후기', href: '/review'},
+            { label: '서비스', href: '/service' },
+            { label: '후기', href: '/review' },
         ],
     },
     {
         label: '고객지원',
         items: [
-            {label: '이용 안내', href: '/notice'},
-            {label: '아카데미', href: '/academy'},
+            { label: '이용 안내', href: '/notice' },
         ],
     },
 ];
 
 export default function Header() {
     const pathname = usePathname();
-    const {isOpen, toggle, close} = useMenuStore();
+    const { isOpen, toggle, close } = useMenuStore();
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const [mobileExpandedGroup, setMobileExpandedGroup] = useState<string | null>(null);
     const headerVisible = useHideOnScroll();
@@ -85,7 +83,7 @@ export default function Header() {
                     <Toolbar disableGutters sx={{
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        minHeight: {xs: '56px', md: '72px'},
+                        minHeight: { xs: '56px', md: '72px' },
                     }}>
                         {/* Logo */}
                         <Link href="/" className="flex items-center h-18">
@@ -95,15 +93,15 @@ export default function Header() {
                                     alt="믿고 맡기는 청소"
                                     fill
                                     priority
-                                    style={{objectFit: 'contain'}}
+                                    style={{ objectFit: 'contain' }}
                                 />
                             </Box>
                         </Link>
 
                         {/* Desktop Mega Menu */}
-                        <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center', gap: 1}}>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
                             {/* 메인 링크 */}
-                            <Link href="/" style={{textDecoration: 'none'}}>
+                            <Link href="/" style={{ textDecoration: 'none' }}>
                                 <Box
                                     sx={{
                                         px: 2,
@@ -114,7 +112,7 @@ export default function Header() {
                                         cursor: 'pointer',
                                         position: 'relative',
                                         transition: 'color 0.2s ease',
-                                        '&:hover': {color: colors.primary.main},
+                                        '&:hover': { color: colors.primary.main },
                                         '&::after': {
                                             content: '""',
                                             position: 'absolute',
@@ -126,7 +124,7 @@ export default function Header() {
                                             backgroundColor: colors.primary.main,
                                             transition: 'width 0.3s ease',
                                         },
-                                        '&:hover::after': {width: '80%'},
+                                        '&:hover::after': { width: '80%' },
                                     }}
                                 >
                                     메인
@@ -137,7 +135,7 @@ export default function Header() {
                             {menuGroups.map((group) => (
                                 <Box
                                     key={group.label}
-                                    sx={{position: 'relative'}}
+                                    sx={{ position: 'relative' }}
                                     onMouseEnter={() => setActiveMenu(group.label)}
                                     onMouseLeave={() => setActiveMenu(null)}
                                 >
@@ -153,7 +151,7 @@ export default function Header() {
                                             fontSize: '0.95rem',
                                             cursor: 'pointer',
                                             transition: 'color 0.2s ease',
-                                            '&:hover': {color: colors.primary.main},
+                                            '&:hover': { color: colors.primary.main },
                                         }}
                                     >
                                         {group.label}
@@ -208,12 +206,12 @@ export default function Header() {
                                                 },
                                             }}
                                         >
-                                            <Box sx={{py: 1.5}}>
+                                            <Box sx={{ py: 1.5 }}>
                                                 {group.items.map((item) => (
                                                     <Link
                                                         key={item.href}
                                                         href={item.href}
-                                                        style={{textDecoration: 'none'}}
+                                                        style={{ textDecoration: 'none' }}
                                                     >
                                                         <Box
                                                             sx={{
@@ -266,8 +264,38 @@ export default function Header() {
                                 </Box>
                             ))}
 
+                            <Link href="/academy" style={{ textDecoration: 'none' }}>
+                                <Box
+                                    sx={{
+                                        px: 2,
+                                        py: 1,
+                                        color: pathname === '/academy' ? colors.primary.main : colors.text.primary,
+                                        fontWeight: pathname === '/academy' ? 600 : 400,
+                                        fontSize: '0.95rem',
+                                        cursor: 'pointer',
+                                        position: 'relative',
+                                        transition: 'color 0.2s ease',
+                                        '&:hover': { color: colors.primary.main },
+                                        '&::after': {
+                                            content: '""',
+                                            position: 'absolute',
+                                            bottom: 0,
+                                            left: '50%',
+                                            transform: 'translateX(-50%)',
+                                            width: pathname === '/academy' ? '80%' : '0%',
+                                            height: '2px',
+                                            backgroundColor: colors.primary.main,
+                                            transition: 'width 0.3s ease',
+                                        },
+                                        '&:hover::after': { width: '80%' },
+                                    }}
+                                >
+                                    아카데미
+                                </Box>
+                            </Link>
+
                             {/* 견적/예약 버튼 (강조) */}
-                            <Link href="/reservation" style={{textDecoration: 'none', marginLeft: 8}}>
+                            <Link href="/reservation" style={{ textDecoration: 'none', marginLeft: 8 }}>
                                 <Box
                                     sx={{
                                         px: 3,
@@ -293,11 +321,11 @@ export default function Header() {
 
                         {/* Mobile Menu Button */}
                         <IconButton
-                            sx={{display: {xs: 'flex', md: 'none'}, color: colors.primary.main}}
+                            sx={{ display: { xs: 'flex', md: 'none' }, color: colors.primary.main }}
                             onClick={toggle}
                             aria-label="메뉴"
                         >
-                            {isOpen ? <X size={28}/> : <MenuIcon size={28}/>}
+                            {isOpen ? <X size={28} /> : <MenuIcon size={28} />}
                         </IconButton>
                     </Toolbar>
                 </Container>
@@ -309,7 +337,7 @@ export default function Header() {
                 open={isOpen}
                 onClose={close}
                 sx={{
-                    display: {xs: 'block', md: 'none'},
+                    display: { xs: 'block', md: 'none' },
                     '& .MuiDrawer-paper': {
                         width: '280px',
                         backgroundColor: colors.background.darker,
@@ -342,7 +370,7 @@ export default function Header() {
                         }}
                         aria-label="닫기"
                     >
-                        <X size={24}/>
+                        <X size={24} />
                     </IconButton>
                 </Box>
 
@@ -425,16 +453,16 @@ export default function Header() {
                                         }}
                                     />
                                     {mobileExpandedGroup === group.label ? (
-                                        <ChevronUp size={18}/>
+                                        <ChevronUp size={18} />
                                     ) : (
-                                        <ChevronDown size={18}/>
+                                        <ChevronDown size={18} />
                                     )}
                                 </ListItemButton>
                             </ListItem>
 
                             {/* 서브메뉴 */}
                             <Collapse in={mobileExpandedGroup === group.label} timeout="auto" unmountOnExit>
-                                <List component="div" disablePadding sx={{pl: 2}}>
+                                <List component="div" disablePadding sx={{ pl: 2 }}>
                                     {group.items.map((item) => (
                                         <ListItem key={item.href} disablePadding>
                                             <ListItemButton
@@ -477,8 +505,47 @@ export default function Header() {
                         </Box>
                     ))}
 
+
+                    {/* 메인 링크 */}
+                    <ListItem disablePadding>
+                        <ListItemButton
+                            component={Link}
+                            href="/academy"
+                            onClick={close}
+                            selected={pathname === '/academy'}
+                            sx={{
+                                py: 2,
+                                px: 2,
+                                my: 0.5,
+                                borderRadius: 1,
+                                color: colors.text.primary,
+                                backgroundColor: pathname === '/academy' ? `${colors.primary.main}15` : 'transparent',
+                                borderLeft: pathname === '/academy' ? `3px solid ${colors.primary.main}` : '3px solid transparent',
+                                transition: 'all 0.2s ease',
+                                '&.Mui-selected': {
+                                    backgroundColor: `${colors.primary.main}15`,
+                                    color: colors.primary.main,
+                                },
+                                '&:hover': {
+                                    backgroundColor: `${colors.primary.main}10`,
+                                    color: colors.primary.main,
+                                },
+                            }}
+                        >
+                            <ListItemText
+                                primary="아카데미"
+                                slotProps={{
+                                    primary: {
+                                        fontWeight: pathname === '/academy' ? 600 : 500,
+                                        fontSize: '0.95rem',
+                                    },
+                                }}
+                            />
+                        </ListItemButton>
+                    </ListItem>
+
                     {/* 견적/예약 버튼 (강조) */}
-                    <ListItem disablePadding sx={{mt: 2, px: 1}}>
+                    <ListItem disablePadding sx={{ mt: 2, px: 1 }}>
                         <ListItemButton
                             component={Link}
                             href="/reservation"

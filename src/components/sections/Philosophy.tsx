@@ -4,7 +4,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Target, Heart, Leaf, GraduationCap, Eye, Award } from 'lucide-react';
 import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
-import {colors, commonStyles} from '@/lib/theme/colors';
+import { colors, commonStyles } from '@/lib/theme/colors';
 
 const MotionBox = motion(Box);
 
@@ -79,7 +79,8 @@ export default function Philosophy() {
 							sx={{
 								textAlign: 'center',
 								mb: 8,
-								color: colors.text.tertiary,
+								color: colors.text.dark,
+								fontWeight: 600,
 								maxWidth: '600px',
 								mx: 'auto',
 							}}

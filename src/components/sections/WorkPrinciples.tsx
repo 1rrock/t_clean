@@ -55,45 +55,6 @@ export default function WorkPrinciples() {
 					viewport={{ once: true, margin: '-100px' }}
 					variants={staggerContainer}
 				>
-					{/* 메인 텍스트 - 세련된 카드 스타일 */}
-					<motion.div variants={fadeInUp}>
-						<Box
-							sx={{
-								position: 'relative',
-								maxWidth: '800px',
-								mx: 'auto',
-								mb: 8,
-								p: { xs: 4, md: 5 },
-								background: `linear-gradient(135deg, ${colors.background.overlayLight} 0%, rgba(20, 20, 20, 0.45) 100%)`,
-								borderRadius: 3,
-								border: `1px solid ${colors.border.blue}`,
-								backdropFilter: 'blur(10px)',
-								textAlign: 'center',
-							}}
-						>
-							<Typography
-								variant="h4"
-								sx={{
-									fontSize: { xs: '0.8rem', md: '1.25rem' },
-									fontWeight: 400,
-									lineHeight: 2.2,
-									color: colors.text.secondary,
-									'& span': {
-										color: colors.primary.main,
-										fontWeight: 600,
-									},
-								}}
-							>
-								믿고 맡기는 청소는 <span>하루 한 집 전담제</span>로 운영되며,
-								<br />
-								<span>전문 장비</span>와 <span>친환경 약품</span> 사용을 기본 원칙으로 합니다.
-								<br />
-								전 과정은 <span>사진과 영상</span>으로 기록해 투명하게 공유합니다.
-							</Typography>
-						</Box>
-					</motion.div>
-
-					{/* 아이콘 카드 */}
 					<Box
 						sx={{
 							display: 'grid',
@@ -113,7 +74,7 @@ export default function WorkPrinciples() {
 										backgroundColor: 'rgba(255, 255, 255, 0.2)',
 										borderRadius: 2,
 										border: `1px solid ${colors.border.blue}`,
-                                        backdropFilter: 'blur(1px)',
+										backdropFilter: 'blur(1px)',
 										transition: 'all 0.4s ease',
 										boxShadow: `
 											0 0 20px rgba(74, 123, 167, 0.15),

@@ -1,11 +1,11 @@
 'use client';
 
-import {Box, Container, Typography, Card, CardContent} from '@mui/material';
-import {Home, Truck, Wrench, CheckCircle} from 'lucide-react';
-import {motion} from 'framer-motion';
+import { Box, Container, Typography, Card, CardContent } from '@mui/material';
+import { Home, Truck, Wrench, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import PageHero from '@/components/sections/PageHero';
-import {fadeInUp, staggerContainer} from '@/lib/animation/variants';
-import {colors, commonStyles} from '@/lib/theme/colors';
+import { fadeInUp, staggerContainer } from '@/lib/animation/variants';
+import { colors, commonStyles } from '@/lib/theme/colors';
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 const MotionCard = motion(Card);
@@ -25,13 +25,12 @@ const services = [
     },
     {
         icon: Truck,
-        title: '이사청소 (공실 기준)',
+        title: '이사청소',
         description:
             '이전에 생활이 있었던 공간을 비워낸 뒤 정리하고, 공실 상태에서 다음 사용자가 편안하게 시작할 수 있도록 준비합니다.',
         situations: [
             '이전 사용자가 거주했던 공실 공간',
             '퇴거 직후 생활 흔적 정리가 필요한 경우',
-            '레일, 몰딩, 후드 내부 등 누적 오염 정리가 필요한 경우',
             '다음 사용자를 위한 준비 청소가 필요한 경우',
         ],
         note: '가구나 물건이 있는 상태, 거주 중 청소는 진행하지 않습니다.',
@@ -50,13 +49,13 @@ const services = [
 ];
 
 const cleaningAreas = [
-    {name: '현관', description: '수납, 문틀, 바닥 정돈 및 마감'},
-    {name: '방·거실·복도', description: '상부 구조, 스위치, 몰딩, 바닥 정돈'},
-    {name: '창문/창틀/샷시(내창)', description: '프레임, 방충망, 잔여 흔적 정리'},
-    {name: '주방', description: '수납장 구조 정돈, 후드 케어, 싱크 및 배수부 정리'},
-    {name: '욕실/화장실', description: '설비 케어, 타일 정돈, 배수부 정리'},
-    {name: '베란다/실외기실', description: '바닥 및 구조 정리'},
-    {name: '수납 공간', description: '붙박이장, 신발장 등 내부 정돈'},
+    { name: '현관', description: '수납, 문틀, 바닥 정돈 및 마감' },
+    { name: '방·거실·복도', description: '상부 구조, 스위치, 몰딩, 바닥 정돈' },
+    { name: '창문/창틀/샷시(내창)', description: '프레임, 방충망, 잔여 흔적 정리' },
+    { name: '주방', description: '수납장 구조 정돈, 후드 케어, 싱크 및 배수부 정리' },
+    { name: '욕실/화장실', description: '설비 케어, 타일 정돈, 배수부 정리' },
+    { name: '베란다/실외기실', description: '바닥 및 구조 정리' },
+    { name: '수납 공간', description: '붙박이장, 신발장 등 내부 정돈' },
 ];
 
 export default function ServicePage() {
@@ -78,7 +77,7 @@ export default function ServicePage() {
             {/* Services Section */}
             <Box
                 sx={{
-                    py: {xs: 8, md: 12},
+                    py: { xs: 8, md: 12 },
                     position: 'relative',
                     '&::before': {
                         content: '""',
@@ -92,8 +91,8 @@ export default function ServicePage() {
                     },
                 }}
             >
-                <Container maxWidth="lg" sx={{position: 'relative', zIndex: 1}}>
-                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 6}}>
+                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                         {services.map((service, index) => {
                             const Icon = service.icon;
                             return (
@@ -101,13 +100,13 @@ export default function ServicePage() {
                                     key={index}
                                     initial="hidden"
                                     whileInView="visible"
-                                    viewport={{once: true}}
+                                    viewport={{ once: true }}
                                     variants={{
-                                        hidden: {opacity: 0, y: 30},
+                                        hidden: { opacity: 0, y: 30 },
                                         visible: {
                                             opacity: 1,
                                             y: 0,
-                                            transition: {delay: index * 0.2, duration: 0.6},
+                                            transition: { delay: index * 0.2, duration: 0.6 },
                                         },
                                     }}
                                     sx={{
@@ -121,8 +120,8 @@ export default function ServicePage() {
                                         },
                                     }}
                                 >
-                                    <CardContent sx={{p: {xs: 3, md: 5}}}>
-                                        <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
+                                    <CardContent sx={{ p: { xs: 3, md: 5 } }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                             <Box
                                                 sx={{
                                                     width: 60,
@@ -136,55 +135,55 @@ export default function ServicePage() {
                                                     boxShadow: '0 4px 15px rgba(91, 124, 153, 0.4)',
                                                 }}
                                             >
-                                                <Icon size={30} color="white"/>
+                                                <Icon size={30} color="white" />
                                             </Box>
-                                            <Typography variant="h4" sx={{fontWeight: 600, color: colors.primary.main}}>
+                                            <Typography variant="h4" sx={{ fontWeight: 600, color: colors.primary.main }}>
                                                 {service.title}
                                             </Typography>
                                         </Box>
 
                                         <Typography
                                             variant="body1"
-                                            sx={{mb: 4, fontSize: '1.1rem', lineHeight: 1.8, color: '#e0e0e0'}}
+                                            sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.8, color: '#e0e0e0' }}
                                         >
                                             {service.description}
                                         </Typography>
 
-                                        {service.note && (
-                                            <Box
-                                                sx={{
-                                                    p: 2,
-                                                    mb: 3,
-                                                    backgroundColor: 'rgba(255, 193, 7, 0.1)',
-                                                    borderLeft: '4px solid #ffc107',
-                                                    borderRadius: 1,
-                                                }}
-                                            >
-                                                <Typography variant="body2" sx={{fontWeight: 500, color: '#ffecb3'}}>
-                                                    ※ {service.note}
-                                                </Typography>
-                                            </Box>
-                                        )}
-
-                                        <Typography variant="h6" sx={{mb: 2, fontWeight: 600, color: '#ffffff'}}>
+                                        <Typography variant="h6" sx={{ mb: 2, fontWeight: 600, color: '#ffffff' }}>
                                             이런 경우, {service.title}가 필요합니다
                                         </Typography>
 
-                                        <Box sx={{display: 'flex', flexDirection: 'column', gap: 1.5}}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                                             {service.situations.map((situation, idx) => (
-                                                <Box key={idx} sx={{display: 'flex', alignItems: 'flex-start'}}>
+                                                <Box key={idx} sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                                     <CheckCircle
                                                         size={20}
-                                                        style={{marginRight: '12px', marginTop: '2px', flexShrink: 0}}
+                                                        style={{ marginRight: '12px', marginTop: '2px', flexShrink: 0 }}
                                                         color={colors.primary.main}
                                                     />
                                                     <Typography variant="body2"
-                                                                sx={{lineHeight: 1.6, color: colors.text.secondary}}>
+                                                        sx={{ lineHeight: 1.6, color: colors.text.secondary }}>
                                                         {situation}
                                                     </Typography>
                                                 </Box>
                                             ))}
                                         </Box>
+                                        {service.note && (
+                                            <Box
+                                                sx={{
+                                                    p: 2,
+                                                    mb: 3,
+                                                    mt: 2,
+                                                    backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                                                    borderLeft: '4px solid #ffc107',
+                                                    borderRadius: 1,
+                                                }}
+                                            >
+                                                <Typography variant="body2" sx={{ fontWeight: 500, color: '#ffecb3' }}>
+                                                    ※ {service.note}
+                                                </Typography>
+                                            </Box>
+                                        )}
                                     </CardContent>
                                 </MotionCard>
                             );
@@ -196,7 +195,7 @@ export default function ServicePage() {
             {/* Cleaning Areas Section - 중간 톤 */}
             <Box
                 sx={{
-                    py: {xs: 8, md: 12},
+                    py: { xs: 8, md: 12 },
                     position: 'relative',
                     '&::before': {
                         content: '""',
@@ -211,11 +210,11 @@ export default function ServicePage() {
                     },
                 }}
             >
-                <Container maxWidth="lg" sx={{position: 'relative', zIndex: 1}}>
+                <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="h3"
                         sx={commonStyles.sectionTitle}
@@ -226,14 +225,14 @@ export default function ServicePage() {
                     <MotionTypography
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{once: true}}
+                        viewport={{ once: true }}
                         variants={fadeInUp}
                         variant="body1"
                         sx={{
                             textAlign: 'center',
                             mb: 6,
                             fontSize: '1.1rem',
-                            color: colors.text.primary,
+                            color: colors.text.dark,
                         }}
                     >
                         공간별로 필요한 구역을 확인하고, 편안한 입주를 위한 정돈 작업이 아래 기준에 따라 진행됩니다.
@@ -242,7 +241,7 @@ export default function ServicePage() {
                     <Box
                         sx={{
                             display: 'grid',
-                            gridTemplateColumns: {xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)'},
+                            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
                             gap: 3,
                         }}
                     >
@@ -251,13 +250,13 @@ export default function ServicePage() {
                                 key={index}
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{once: true}}
+                                viewport={{ once: true }}
                                 variants={{
-                                    hidden: {opacity: 0, scale: 0.9},
+                                    hidden: { opacity: 0, scale: 0.9 },
                                     visible: {
                                         opacity: 1,
                                         scale: 1,
-                                        transition: {delay: index * 0.1, duration: 0.4},
+                                        transition: { delay: index * 0.1, duration: 0.4 },
                                     },
                                 }}
                                 sx={{
@@ -265,10 +264,10 @@ export default function ServicePage() {
                                     p: 3,
                                 }}
                             >
-                                <Typography variant="h6" sx={{mb: 1, fontWeight: 600, color: colors.primary.main}}>
+                                <Typography variant="h6" sx={{ mb: 1, fontWeight: 600, color: colors.primary.main }}>
                                     {area.name}
                                 </Typography>
-                                <Typography variant="body2" sx={{color: colors.text.secondary, lineHeight: 1.6}}>
+                                <Typography variant="body2" sx={{ color: colors.text.secondary, lineHeight: 1.6 }}>
                                     {area.description}
                                 </Typography>
                             </MotionBox>
@@ -285,9 +284,9 @@ export default function ServicePage() {
                             borderRadius: 2,
                         }}
                     >
-                        <Typography variant="body2" sx={{color: colors.text.tertiary, textAlign: 'center'}}>
+                        <Typography variant="body2" sx={{ color: colors.text.tertiary, textAlign: 'center' }}>
                             ※ 외창(바깥 유리)은 제외됩니다.
-                            <br/>※ 가전 내부 및 특수 작업은 옵션 안내 기준으로 진행됩니다.
+                            <br />※ 가전 내부 및 특수 작업은 옵션 안내 기준으로 진행됩니다.
                         </Typography>
                     </Box>
                 </Container>
