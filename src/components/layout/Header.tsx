@@ -290,7 +290,7 @@ export default function Header() {
                                         '&:hover::after': { width: '80%' },
                                     }}
                                 >
-                                    아카데미
+                                    교육 문의
                                 </Box>
                             </Link>
 
@@ -533,7 +533,7 @@ export default function Header() {
                             }}
                         >
                             <ListItemText
-                                primary="아카데미"
+                                primary="교육문의"
                                 slotProps={{
                                     primary: {
                                         fontWeight: pathname === '/academy' ? 600 : 500,
