@@ -1,27 +1,11 @@
 # robots.txt for https://www.trustmygroup.co.kr/
-Sitemap: https://www.trustmygroup.co.kr/sitemap-service.xml
-Sitemap: https://www.trustmygroup.co.kr/sitemap-pages.xml
-Sitemap: https://www.trustmygroup.co.kr/sitemap.xml
-# Sitemap
-
+User-agent: *
 Allow: /
-User-agent: Bingbot
-
-Allow: /
-User-agent: Yeti
-
-Allow: /
-User-agent: Googlebot
-# Specific bots
-
-Crawl-delay: 1
-# Crawl delay
-
 Disallow: /admin/
 Disallow: /.next/
 Disallow: /api/
-Allow: /
-User-agent: *
-# Allow all bots
+Crawl-delay: 1
 
-
+Sitemap: https://www.trustmygroup.co.kr/sitemap-service.xml
+Sitemap: https://www.trustmygroup.co.kr/sitemap-pages.xml
+Sitemap: https://www.trustmygroup.co.kr/sitemap.xml
