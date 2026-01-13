@@ -4,6 +4,7 @@ import Providers from './providers';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageTransition from '@/components/common/PageTransition';
+import { Analytics } from "@vercel/analytics/next"
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -84,7 +85,10 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className="pt-14 md:pt-18 min-h-dvh">
-            <PageTransition>{children}</PageTransition>
+            <PageTransition>
+              {children}
+              <Analytics />
+            </PageTransition>
           </main>
           <Footer />
         </Providers>
