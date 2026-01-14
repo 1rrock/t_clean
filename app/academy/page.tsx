@@ -253,7 +253,7 @@ export default function AcademyPage() {
                   },
                 }}
                 onClick={() => {
-                  window.open('https://forms.gle/eEZg55bKsdxjAhBw9', '_blank')
+                  window.open('https://docs.google.com/forms/d/1Sxcsad2dVoDlSFNgYKCp1QaRJMAYfE6vx6mcQaK7xdU/viewform?edit_requested=true', '_blank')
                 }}
               >
                 지원서 작성
@@ -1067,7 +1067,7 @@ export default function AcademyPage() {
                 },
               }}
               onClick={() => {
-                window.open('https://forms.gle/eEZg55bKsdxjAhBw9', '_blank')
+                window.open('https://docs.google.com/forms/d/1Sxcsad2dVoDlSFNgYKCp1QaRJMAYfE6vx6mcQaK7xdU/viewform?edit_requested=true', '_blank')
               }}
             >
               지원서 작성하기
