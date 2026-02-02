@@ -197,7 +197,7 @@ export default function Hero() {
                             variant="contained"
                             size="large"
                             onClick={() => {
-                                window.location.href = '/reservation';
+                                window.open("https://docs.google.com/forms/d/1Sxcsad2dVoDlSFNgYKCp1QaRJMAYfE6vx6mcQaK7xdU/viewform?edit_requested=true")
                             }}
                             sx={{
                                 py: { xs: 1.5, md: 2 },
