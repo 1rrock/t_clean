@@ -89,10 +89,11 @@ export default function Hero() {
                     <MotionTypography
                         variant="h5"
                         variants={fadeInUp}
+                        color='rgba(255,255,255,0.6)'
                         sx={{
                             fontSize: { xs: '1.1rem', md: '1.4rem' },
                             fontWeight: 400,
-                            mb: 5,
+                            mb: 2,
                             maxWidth: '800px',
                             lineHeight: 1.8,
                             opacity: 0.95,
@@ -103,16 +104,33 @@ export default function Hero() {
                         정성과 책임을 담아 공간을 케어하는 프리미엄 공실 청소 서비스입니다.
                     </MotionTypography>
 
+                    <MotionTypography
+                        variant="body1"
+                        variants={fadeInUp}
+                        sx={{
+                            color: '#fff',
+                            fontWeight: 500,
+                            mb: 3,
+                            fontSize: { xs: '0.95rem', md: '1.05rem' },
+                            letterSpacing: '-0.01em',
+                        }}
+                    >
+                        작업가능지역: 서울, 경기, 인천, 충청권일부, 경상권일부
+                    </MotionTypography>
+
                     <MotionStack
                         direction={{ xs: 'column', sm: 'row' }}
                         spacing={2}
                         variants={fadeInUp}
-                        sx={{ alignItems: { xs: 'stretch', sm: 'center' } }}
+                        sx={{
+                            alignItems: { xs: 'stretch', sm: 'center' },
+                            flexWrap: 'wrap',
+                            gap: 2
+                        }}
                     >
                         <Button
                             variant="contained"
                             size="large"
-                            // href="#"
                             sx={{
                                 py: { xs: 1.5, md: 2 },
                                 px: { xs: 3, md: 4 },
@@ -130,7 +148,6 @@ export default function Hero() {
                         <Button
                             variant="outlined"
                             size="large"
-                            // href="https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n"
                             onClick={() => {
                                 window.open("https://www.youtube.com/@%EB%AF%BF%EA%B3%A0%EB%A7%A1%EA%B8%B0%EB%8A%94%EC%B2%AD%EC%86%8C-f8n", "_blank");
                             }}
@@ -155,7 +172,6 @@ export default function Hero() {
                         <Button
                             variant="outlined"
                             size="large"
-                            // href="https://www.instagram.com/t_cleaning_/"
                             onClick={() => {
                                 window.open("https://www.instagram.com/t_cleaning_/", "_blank");
                             }}
@@ -175,6 +191,28 @@ export default function Hero() {
                         >
                             <Instagram size={20} />
                             인스타그램
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            size="large"
+                            onClick={() => {
+                                window.location.href = '/reservation';
+                            }}
+                            sx={{
+                                py: { xs: 1.5, md: 2 },
+                                px: { xs: 3, md: 4 },
+                                fontSize: { xs: '0.95rem', md: '1.1rem' },
+                                fontWeight: 600,
+                                backgroundColor: '#1a1a1a',
+                                color: 'white',
+                                '&:hover': {
+                                    backgroundColor: '#000000',
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                                },
+                            }}
+                        >
+                            교육문의
                         </Button>
                     </MotionStack>
                 </MotionBox>
